@@ -523,7 +523,7 @@ a{color:inherit}
   <div class="desc">
     <div class="k"></div>
     <p></p>
-    <a class="cta" href="#" target="_blank" rel="noopener" hidden>watch with sound ↗</a>
+    <a class="cta" href="https://www.youtube.com/watch?v=Uk-x7Rpu6-o" target="_blank" rel="noopener" hidden>view showreel ↗</a>
     <div class="num">01 / 05</div>
   </div>
 
@@ -625,7 +625,7 @@ a{color:inherit}
           <a href="tel:+919849330362">call +91 98493 30362</a>
           <a href="mailto:vinaymahadev.11@gmail.com">vinaymahadev.11@gmail.com</a>
           <a class="alt" href="https://www.instagram.com/vinaymahadev_actor/" target="_blank" rel="noopener">instagram @vinaymahadev_actor ↗</a>
-          <a class="alt sr" href="#" target="_blank" rel="noopener">showreel ↗</a>
+          <a class="alt sr" href="https://www.youtube.com/watch?v=Uk-x7Rpu6-o" target="_blank" rel="noopener">view showreel ↗</a>
         </div>
         <p class="foot">For auditions, look tests and dates, call or email directly.</p>
       </div>
@@ -642,8 +642,8 @@ root.classList.add('js');
 const SHOWREEL = 'https://www.youtube.com/watch?v=Uk-x7Rpu6-o';
 const IMG = 'assets/img/';
 const CASES = [
-  { t:'SHOWREEL', rows:['VINAY MAHADEV','ACTING REEL','WATCH ON YOUTUBE ↗'], k:'// showreel',
-    d:'— faces, voices and temperaments, cut into one reel. Tap the ticket to watch it with sound.', link:SHOWREEL,
+  { t:'SHOWREEL', rows:['VINAY MAHADEV','ACTING REEL','VIEW SHOWREEL ↗'], k:'// showreel',
+    d:'— faces, voices and temperaments, cut into one reel. Tap the ticket or view showreel link to watch on YouTube.', link:SHOWREEL,
     shots:['rugged-bike','intense-closeup','red-scarf-intense','night-monochrome','maroon-shirt-closeup','roar'] },
   { t:'SARIPODHAA SANIVAARAM', rows:['ROLE — MARTIN','TELUGU FEATURE','2024'], k:'// saripodhaa sanivaaram',
     d:'— Martin, from the world of Narayana Prabha, in Vivek Athreya’s action drama starring Nani.',
@@ -711,16 +711,13 @@ function pose(m){
   return { s, x, y };
 }
 
-/* Phone hero: reserve a band for the camera between the handwriting and the top of his head.
-   His head (hair top) sits 150 frame units below the frame top and the frame is bottom-anchored,
-   so shrinking the portrait is what opens the band on short screens. */
+/* Phone hero: keep the portrait tall and heroic, and scale the camera small
+   tucked cleanly in the upper-left open band so it never covers Vinay's head, face or body. */
 function mHero(W, H){
   const scriptBottom = 12 + 96*W/430 + .29*W;           // bottom of the handwritten "vinay"
-  const camH = Math.max(78, Math.min(130, .15*H));       // camera's on-screen height
-  const gap = 22;
-  const sFit = (H - scriptBottom - camH - 2*gap) / 660;  // head top (H - 660s) clears the band
-  const s = Math.max(.3, Math.min(W/620, .7*H/680, sFit));
-  return { s, scriptBottom, camH, gap };
+  const s = Math.min(W/620, .72*H/680);                  // natural hero portrait scale
+  const camH = Math.max(36, Math.min(48, .055*H));       // compact camera on-screen height
+  return { s, scriptBottom, camH };
 }
 
 const CAM_ID ='translate(0px,0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
@@ -730,13 +727,14 @@ function heroCamVals(){
   let sc, cx, cy;
   if (!isM()){ sc = .34; cx = vl + 18/s + 60 + 480*sc; cy = Math.min(620, vb - 40/s - 320*sc); }
   else {
-    // phones: the camera lives in the reserved band, left of the hanging badge, never over his face
+    // phones: small compact camera tucked to the left, clear of Vinay's head, face and hero portrait
     const L = mHero(W, H);
-    // 1.1 = body + handle + tilt + idle bob, so the visual box never reaches his hair
-    sc = Math.min(L.camH / (640*1.1*s), (.5*W) / (960*.95*s));
-    const camH = 640*1.1*sc*s;
-    const ty = L.scriptBottom + L.gap + camH/2;
-    cx = (.3*W - x)/s; cy = (ty - y)/s;
+    sc = L.camH / (640 * s);
+    const camW = 960 * sc * s;
+    const targetX = Math.max(camW/2 + 14, .14 * W);
+    const targetY = L.scriptBottom + 8 + L.camH/2;
+    cx = (targetX - x) / s;
+    cy = (targetY - y) / s;
   }
   return { tx: cx - 720, ty: cy - 410, sc };
 }
@@ -774,11 +772,12 @@ function play(el, kf, o){ // runs, then drops back to the element's CSS state
 let bobAnim = null;
 function startBob(){
   if (RM || bobAnim) return;
+  const y1 = isM() ? -10 : -34, y2 = isM() ? 8 : 28;
   bobAnim = bob.animate([
     { transform:'translateY(0) rotate(0deg)', easing:'ease-in-out' },
-    { transform:'translateY(-34px) rotate(-1.6deg)', easing:'ease-in-out' },
+    { transform:`translateY(${y1}px) rotate(-1.4deg)`, easing:'ease-in-out' },
     { transform:'translateY(0) rotate(0deg)', easing:'ease-in-out' },
-    { transform:'translateY(28px) rotate(1.4deg)', easing:'ease-in-out' },
+    { transform:`translateY(${y2}px) rotate(1.2deg)`, easing:'ease-in-out' },
     { transform:'translateY(0) rotate(0deg)' }], { duration:6400, iterations:Infinity });
 }
 function stopBob(){ if (bobAnim){ bobAnim.cancel(); bobAnim = null; } }
@@ -809,8 +808,8 @@ function entrance(){
     { transform:'rotate(1.6deg)', offset:.8 },
     { opacity:1, transform:'rotate(0deg)' }], { duration:1500, delay:700 }) && setTimeout(() => { if (mode === 'hero' && !busy) startSway(b); }, 700 + 1500 + 20));
   go($('.hint'), [{ opacity:0 }, { opacity:.85 }], { duration:600, delay:1800 });
-  // phones: drop in from above so the flight path never crosses his face
-  play(bob, [{ transform: isM() ? 'translate(0px,-1400px) rotate(-18deg)' : 'translate(-560px,900px) rotate(-26deg)' }, { transform:'translate(0px,0px) rotate(0deg)' }],
+  // phones: drop in from above cleanly into the upper-left slot
+  play(bob, [{ transform: isM() ? 'translate(0px,-900px) rotate(-10deg)' : 'translate(-560px,900px) rotate(-26deg)' }, { transform:'translate(0px,0px) rotate(0deg)' }],
     { duration:1400, delay:900, easing:'cubic-bezier(.2,.9,.25,1)' });
   setTimeout(() => { startBob(); afterEntrance(); }, 900 + 1400 + 40);
 }
@@ -905,9 +904,13 @@ function fillCase(i){
   dNum.textContent = `${p2(i + 1)} / ${p2(N)}`;
   ticket.classList.toggle('link', !!c.link);
   ticket.title = c.link ? 'Watch the showreel on YouTube' : '';
+  if (c.link){ ticket.setAttribute('role', 'link'); ticket.setAttribute('tabindex', '0'); }
+  else { ticket.removeAttribute('role'); ticket.removeAttribute('tabindex'); }
   dCta.hidden = !(c.link || c.gallery);
-  if (c.link){ dCta.href = c.link; dCta.target = '_blank'; dCta.textContent = 'watch with sound ↗'; }
+  if (c.link){ dCta.href = c.link; dCta.target = '_blank'; dCta.textContent = 'view showreel ↗'; }
   else if (c.gallery){ dCta.href = '#gallery'; dCta.removeAttribute('target'); dCta.textContent = 'open the gallery →'; }
+  feed.style.cursor = c.link ? 'pointer' : '';
+  feed.title = c.link ? 'Watch the showreel on YouTube' : '';
   prevBtn.classList.toggle('dim', i === 0);
   prevBtn.setAttribute('aria-label', i === 0 ? 'Back to the actor' : 'Previous case');
 }
@@ -1052,9 +1055,24 @@ $$('[data-act]').forEach(el => el.addEventListener('click', e => {
 }));
 prevBtn.addEventListener('click', up);
 nextBtn.addEventListener('click', down);
-cam.addEventListener('click', () => { if (busy) return; mode === 'hero' ? toCase(0) : down(); });
+cam.addEventListener('click', e => {
+  if (busy) return;
+  if (mode === 'hero'){ toCase(0); return; }
+  const c = CASES[idx];
+  if (c.link && e.target.closest('.screen')){
+    window.open(c.link, '_blank', 'noopener');
+    return;
+  }
+  down();
+});
 dCta.addEventListener('click', e => { if (CASES[idx].gallery){ e.preventDefault(); openSheet('gallery'); } });
 ticket.addEventListener('click', () => { const c = CASES[idx]; if (mode === 'case' && c.link) window.open(c.link, '_blank', 'noopener'); });
+ticket.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && mode === 'case' && CASES[idx].link){
+    e.preventDefault();
+    window.open(CASES[idx].link, '_blank', 'noopener');
+  }
+});
 
 /* ---------- sheets ---------- */
 let lastFocus = null;
