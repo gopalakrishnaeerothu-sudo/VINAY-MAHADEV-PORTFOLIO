@@ -5,9 +5,10 @@ A one-screen, cinematic portfolio for actor **Vinay Mahadev** (Hyderabad · Telu
 - **Hero** — portrait under blue rim light, a giant `MAHADEV` wordmark behind him, handwritten "vinay", a swinging lanyard *Actor Card* and a floating 3D cinema camera.
 - **The dive** — scroll, swipe, press ↓ or click the camera: the camera flies in, turns around and its monitor powers on.
 - **The reel** — five cases play on the camera monitor with a live viewfinder (REC, timecode, scene/take): Showreel, Saripodhaa Sanivaaram, Sitaraman, The Range, Nandi Award.
-- **Filmography** and **Cast Vinay** sheets carry the full credits, theatre, awards, stats and contact links.
+- **Carousels** — a 3D rotating drag ring and twin film-strip marquees in the Gallery sheet, and two opposing scroll-linked tile rows (films + stills) in the Filmography sheet; tap any still for a lightbox.
+- **Filmography**, **Gallery** and **Cast Vinay** sheets carry the full credits, theatre, awards, stats, photos and contact links.
 
-Deep links: `#work`, `#case-1` … `#case-5`, `#films`, `#cast`.
+Deep links: `#work`, `#case-1` … `#case-5`, `#films`, `#gallery`, `#cast`.
 
 ## Stack
 

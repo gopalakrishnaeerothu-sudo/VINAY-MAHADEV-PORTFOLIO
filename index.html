@@ -152,7 +152,7 @@ a{color:inherit}
 .tag:hover{transform:translateY(calc(-2*var(--n))) rotate(-1.5deg);
   box-shadow:0 calc(5*var(--n)) 0 rgba(0,0,0,.22),0 calc(10*var(--n)) calc(18*var(--n)) rgba(0,0,0,.2)}
 .tag:active{transform:translateY(var(--n));box-shadow:0 var(--n) 0 rgba(0,0,0,.22)}
-.t1{left:calc(30*var(--n))}.t2{left:calc(233*var(--n))}.t3{right:calc(244*var(--n))}.t4{right:calc(32*var(--n))}
+.t1{left:calc(30*var(--n))}.t2{left:calc(233*var(--n))}.t3{right:calc(244*var(--n))}.t4{right:calc(32*var(--n))}.t5{right:calc(410*var(--n))}
 .js .pre{opacity:0}
 
 .logo{position:absolute;left:50%;top:calc(14*var(--n));transform:translateX(-50%);font-weight:600;font-size:calc(19*var(--n));
@@ -228,11 +228,59 @@ a{color:inherit}
 .eyebrow{font-weight:700;font-size:15px;letter-spacing:-.01em;color:#4b5563}
 .sheet h2{font:400 clamp(44px,7vw,84px)/.95 'Anton',Impact,sans-serif;letter-spacing:-.01em;margin-top:6px}
 .sheet h3{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:30px 0 8px}
-.strip{margin:22px -56px 0;padding:16px 56px;background:#0b0d10;position:relative;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
-.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:8px;
-  background:repeating-linear-gradient(90deg,transparent 0 10px,#f6f7f5 10px 20px,transparent 20px 30px);opacity:.85}
-.strip::before{top:4px}.strip::after{bottom:4px}
-.strip img{height:120px;width:auto;flex:none;border-radius:2px;filter:saturate(.95)}
+/* GK-style opposing tile rows (filmography) */
+.gk{margin:24px -56px 6px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.gk-row{display:flex;gap:10px;width:max-content;will-change:transform}
+.gk-tile{position:relative;flex:none;width:300px;height:190px;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff}
+.gk-tile::before{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.14);filter:blur(24px)}
+.gk-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent 70%)}
+.gk-tile span,.gk-tile b{position:relative;z-index:1}
+.gk-tile span{font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.gk-tile b{font:400 34px/1 'Anton',Impact,sans-serif;text-transform:uppercase;margin-top:6px}
+.gk-tile.ph{padding:0;background:#0b0d10;cursor:zoom-in}
+.gk-tile.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .6s}
+.gk-tile.ph:hover img{transform:scale(1.07)}
+.gk-tile.ph span{position:absolute;left:16px;bottom:14px}
+
+/* RK-style gallery: 3D ring + film-strip marquees (dark sheet) */
+.sheet.gal{background:#050b16;color:#fff;overflow-x:hidden}
+.sheet.gal .eyebrow{color:#8fb6e8}
+.sheet.gal .close{background:#fff;color:var(--ink)}
+.sheet.gal .hole{background:#1b2b44}
+.ring-stage{height:430px;perspective:1400px;display:grid;place-items:center;cursor:grab;user-select:none;touch-action:pan-y;margin-top:6px}
+.ring-stage.dragging{cursor:grabbing}
+.ring{position:relative;width:220px;height:300px;transform-style:preserve-3d}
+.ring figure{position:absolute;inset:0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 24px 46px rgba(0,0,0,.6);-webkit-backface-visibility:hidden;backface-visibility:hidden;background:#0b1424;cursor:zoom-in}
+.ring img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;pointer-events:none}
+.ring figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  background:linear-gradient(transparent,rgba(4,8,16,.92))}
+.ring-ctl{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:6px}
+.rbtn{width:50px;height:50px;border-radius:50%;border:1.6px solid rgba(255,255,255,.9);display:grid;place-items:center;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s}
+.rbtn svg{width:22px;height:22px}
+.rbtn:hover{transform:scale(1.08)}
+.rbtn.next{background:#fff;color:var(--navy-800)}
+.rbtn.next:hover{background:var(--ice)}
+.ring-hint{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.7;min-width:120px;text-align:center}
+.strips{margin:34px -56px 0;padding:10px 0 6px;perspective:900px}
+.fstrip{position:relative;overflow:hidden;background:#0b0d10;padding:24px 0;transform:rotate(-2deg) rotateX(8deg);box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.fstrip.rev{transform:rotate(2deg) rotateX(-8deg);margin-top:18px;opacity:.85}
+.fstrip::before,.fstrip::after{content:"";position:absolute;left:0;right:0;height:10px;z-index:1;
+  background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(190,220,255,.55) 14px 26px)}
+.fstrip::before{top:7px}.fstrip::after{bottom:7px}
+.ftrack{display:flex;gap:14px;width:max-content;animation:marquee 48s linear infinite}
+.fstrip.rev .ftrack{animation-direction:reverse;animation-duration:58s}
+.fstrip:hover .ftrack{animation-play-state:paused}
+.fframe{width:200px;height:136px;flex:none;overflow:hidden;border-radius:4px;cursor:zoom-in;background:#111}
+.fframe img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) brightness(.8);transition:filter .5s,transform .5s}
+.fframe:hover img{filter:none;transform:scale(1.12)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.lightbox{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:28px;background:rgba(1,5,12,.92);cursor:zoom-out}
+.lightbox[hidden]{display:none}
+.lightbox figure{max-width:min(1100px,100%);text-align:center}
+.lightbox img{max-width:100%;max-height:calc(100dvh - 120px);border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox figcaption{margin-top:14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.85}
 .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:48px}
 .credits{list-style:none}
 .credits li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:baseline;padding:9px 0 7px;border-bottom:1.5px dotted #2a2a2a}
@@ -269,7 +317,7 @@ a{color:inherit}
     mask-image:linear-gradient(180deg,transparent 0,#000 220px),linear-gradient(90deg,transparent 0,#000 160px,#000 740px,transparent 900px)}
   .tag{top:12px;height:30px;font-size:13px;padding:0 12px}
   .t1{left:12px}.t2{left:auto;right:12px}.t3{left:12px;right:auto;top:calc(12px + 44*var(--n))}.t4{right:12px;top:calc(12px + 44*var(--n))}
-  .is-case .t3,.is-case .t4{visibility:hidden}
+  .is-case .t3,.is-case .t4,.is-case .t5{visibility:hidden}
   .logo{display:none}
   .mwm{position:absolute;left:3vw;width:94vw;top:calc(12px + 96*var(--n));height:calc(94vw*240/1440);overflow:visible}
   .mscript{position:absolute;left:5vw;top:calc(12px + 96*var(--n) + 13vw);font:400 15vw/1 'Caveat Brush',cursive;color:var(--blue);
@@ -297,8 +345,14 @@ a{color:inherit}
   .hint{bottom:18px;font-size:11px}
   .sheet{padding:44px 22px 30px}
   .sheet .close{right:16px;top:14px}
-  .strip{margin:18px -22px 0;padding:16px 22px}
-  .strip img{height:92px}
+  .gk{margin:18px -22px 6px}
+  .gk-tile{width:220px;height:140px;padding:14px;border-radius:10px}
+  .gk-tile b{font-size:24px}
+  .ring-stage{height:340px}
+  .ring{width:160px;height:220px}
+  .strips{margin:26px -22px 0}
+  .fframe{width:150px;height:102px}
+  .t5{left:50%;right:auto;top:calc(12px + 44*var(--n));margin-left:-34px}
   .cols,.cast{grid-template-columns:1fr;gap:8px}
   .cast .photo{max-width:300px;width:100%}
   .credits li{grid-template-columns:44px 1fr;row-gap:2px}
@@ -453,6 +507,7 @@ a{color:inherit}
 
   <button class="tag t1 pre" type="button" data-act="hero">the actor</button>
   <button class="tag t2 pre" type="button" data-act="work">the work</button>
+  <a class="tag t5 pre" href="#gallery" data-act="gallery">gallery</a>
   <a class="tag t3 pre" href="#films" data-act="films">filmography</a>
   <a class="tag t4 pre" href="#cast" data-act="cast">cast vinay</a>
 
@@ -491,13 +546,7 @@ a{color:inherit}
     <button class="close" type="button">close ✕</button>
     <p class="eyebrow">// call sheet</p>
     <h2 id="films-h">FILMOGRAPHY</h2>
-    <div class="strip" aria-hidden="true">
-      <img src="assets/img/saripodhaa-martin-poster.jpg" alt="" loading="lazy"><img src="assets/img/police-uniform.jpg" alt="" loading="lazy">
-      <img src="assets/img/army-naveen.jpg" alt="" loading="lazy"><img src="assets/img/rugged-bike.jpg" alt="" loading="lazy">
-      <img src="assets/img/village-checks.jpg" alt="" loading="lazy"><img src="assets/img/red-scarf-intense.jpg" alt="" loading="lazy">
-      <img src="assets/img/night-monochrome.jpg" alt="" loading="lazy"><img src="assets/img/maroon-shirt-closeup.jpg" alt="" loading="lazy">
-      <img src="assets/img/intense-closeup.jpg" alt="" loading="lazy"><img src="assets/img/nandi-award-stage.jpg" alt="" loading="lazy">
-    </div>
+    <div class="gk" aria-hidden="true"><div class="gk-row r1"></div><div class="gk-row r2"></div></div>
     <div class="cols">
       <section>
         <h3>Feature films</h3>
@@ -530,6 +579,28 @@ a{color:inherit}
     </div>
   </article>
 </div>
+
+<!-- Gallery -->
+<div class="sheet-wrap" id="gallery" hidden role="dialog" aria-modal="true" aria-labelledby="gal-h">
+  <article class="sheet gal">
+    <i class="hole h1"></i><i class="hole h2"></i>
+    <button class="close" type="button">close ✕</button>
+    <p class="eyebrow">// contact sheet</p>
+    <h2 id="gal-h">GALLERY</h2>
+    <div class="ring-stage"><div class="ring"></div></div>
+    <div class="ring-ctl">
+      <button class="rbtn prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <span class="ring-hint">drag · tap to open</span>
+      <button class="rbtn next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="strips">
+      <div class="fstrip"><div class="ftrack"></div></div>
+      <div class="fstrip rev"><div class="ftrack"></div></div>
+    </div>
+  </article>
+</div>
+
+<div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo"><figure><img alt=""><figcaption></figcaption></figure></div>
 
 <!-- Cast / contacts -->
 <div class="sheet-wrap" id="cast" hidden role="dialog" aria-modal="true" aria-labelledby="cast-h">
@@ -581,7 +652,7 @@ const CASES = [
     d:'— Naveen, in army olive and a beret, up at the snow line.',
     shots:['army-naveen'] },
   { t:'THE RANGE', rows:['6′2″ · 188 CM','PLAYING AGE 20–35','ENGLISH · TELUGU · HINDI'], k:'// range',
-    d:'— uniform, village, street, studio: one face that keeps changing its mind.',
+    d:'— uniform, village, street, studio: one face that keeps changing its mind.', gallery:true,
     shots:['police-uniform','village-checks','maroon-shirt-full','curls-smile','gym-physique','tropical-shirt'] },
   { t:'NANDI AWARD', rows:['BEST SUPPORTING ACTOR','THEATRE PLAY','2017'], k:'// the stage',
     d:'— trained at the NSD Theatre Workshop, raised on plays with Bahurupa Nata Samaikya. Best Actor, Paruchuri Nataka Parishat 2018.',
@@ -730,7 +801,7 @@ function entrance(){
 }
 function afterEntrance(){
   const h = location.hash.slice(1);
-  if (h === 'films' || h === 'cast') openSheet(h);
+  if (h === 'films' || h === 'cast' || h === 'gallery') openSheet(h);
   else if (h === 'work' || /^case-\d$/.test(h)) toCase(h.startsWith('case-') ? Math.min(N, Math.max(1, +h.slice(5))) - 1 : 0);
 }
 
@@ -819,7 +890,9 @@ function fillCase(i){
   dNum.textContent = `${p2(i + 1)} / ${p2(N)}`;
   ticket.classList.toggle('link', !!c.link);
   ticket.title = c.link ? 'Watch the showreel on YouTube' : '';
-  dCta.hidden = !c.link; if (c.link) dCta.href = c.link;
+  dCta.hidden = !(c.link || c.gallery);
+  if (c.link){ dCta.href = c.link; dCta.target = '_blank'; dCta.textContent = 'watch with sound ↗'; }
+  else if (c.gallery){ dCta.href = '#gallery'; dCta.removeAttribute('target'); dCta.textContent = 'open the gallery →'; }
   prevBtn.classList.toggle('dim', i === 0);
   prevBtn.setAttribute('aria-label', i === 0 ? 'Back to the actor' : 'Previous case');
 }
@@ -946,7 +1019,7 @@ addEventListener('touchend', e => {
 });
 
 addEventListener('keydown', e => {
-  if (e.key === 'Escape'){ if (sheetOpen) return closeSheet(); if (mode === 'case') return toHero(); }
+  if (e.key === 'Escape'){ if (!lb.hidden) return closeLightbox(); if (sheetOpen) return closeSheet(); if (mode === 'case') return toHero(); }
   if (sheetOpen || e.metaKey || e.ctrlKey || e.altKey) return;
   const onCtl = e.target.closest && e.target.closest('button,a');
   if (onCtl && (e.key === ' ' || e.key === 'Enter')) return;
@@ -965,6 +1038,7 @@ $$('[data-act]').forEach(el => el.addEventListener('click', e => {
 prevBtn.addEventListener('click', up);
 nextBtn.addEventListener('click', down);
 cam.addEventListener('click', () => { if (busy) return; mode === 'hero' ? toCase(0) : down(); });
+dCta.addEventListener('click', e => { if (CASES[idx].gallery){ e.preventDefault(); openSheet('gallery'); } });
 ticket.addEventListener('click', () => { const c = CASES[idx]; if (mode === 'case' && c.link) window.open(c.link, '_blank', 'noopener'); });
 
 /* ---------- sheets ---------- */
@@ -984,10 +1058,13 @@ function openSheet(id){
   }
   history.replaceState(null, '', '#' + id);
   w.querySelector('.close').focus({ preventScroll:true });
+  SHEET_HOOKS[id] && SHEET_HOOKS[id].open();
 }
 function closeSheet(instant){
   if (!sheetOpen) return;
   const w = sheetOpen; sheetOpen = null;
+  SHEET_HOOKS[w.id] && SHEET_HOOKS[w.id].close();
+  closeLightbox();
   history.replaceState(null, '', location.pathname + location.search);
   const done = () => { w.hidden = true; };
   if (instant || RM) done();
@@ -997,6 +1074,100 @@ function closeSheet(instant){
 $$('.sheet-wrap').forEach(w => {
   w.addEventListener('click', e => { if (e.target === w || e.target.closest('.close')) closeSheet(); });
 });
+
+/* ---------- carousels ---------- */
+const GALLERY = [
+  ['saripodhaa-martin-poster','Martin · Saripodhaa Sanivaaram'], ['army-naveen','Naveen · Sitaraman'], ['police-uniform','In uniform'],
+  ['rugged-bike','Rugged'], ['village-checks','Village'], ['red-scarf-intense','Intense'], ['roar','Roar'],
+  ['night-monochrome','Night'], ['maroon-shirt-closeup','Close-up'], ['maroon-shirt-full','Full length'],
+  ['intense-closeup','Stare'], ['curls-smile','Curls'], ['tropical-shirt','Easy'], ['gym-physique','Physique'],
+  ['white-shirt-studio','Studio'], ['portrait-white-kurta','Portrait'], ['nandi-award-stage','On stage · award night']
+].map(([n, c]) => ({ src: IMG + n + '.jpg', cap: c }));
+const FILMS = [
+  ['Champion',2025,'Bhikshapati'], ['Mowgli',2025,'Kasi'], ['Hebbuli Cut',2025,'Gowda'], ['Saripodhaa Sanivaaram',2024,'Martin'],
+  ['Ambajipeta Marriage Band',2024,'Prasad'], ['Premakath',2024,'Yadav'], ['Krishna Gadu Ante Oka Range',2023,'Deva'],
+  ['Sitaraman',2022,'Naveen'], ['Wilddog',2021,'Qateel'], ['Valasa',2021,'Shankar'], ['Romantic Criminals',2019,'Mahesh'], ['Dear Comrade',2019,'Vinay']
+];
+const ACCENTS = [['#0a1f3a','#2f6fd1'], ['#3a0d14','#d13b3b'], ['#101318','#5b6470'], ['#123561','#4aa3ff'], ['#0b2a3a','#2fb3c9'], ['#2a1840','#7b5cd6']];
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]));
+
+// lightbox
+const lb = $('.lightbox'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption');
+function openLightbox(g){ lbImg.src = g.src; lbImg.alt = 'Vinay Mahadev — ' + g.cap; lbCap.textContent = g.cap; lb.hidden = false;
+  if (!RM) lb.animate([{ opacity:0 }, { opacity:1 }], { duration:250 }); }
+function closeLightbox(){ lb.hidden = true; }
+lb.addEventListener('click', closeLightbox);
+
+// GK-style opposing rows in the filmography sheet
+const gkR1 = $('.gk .r1'), gkR2 = $('.gk .r2');
+const filmTiles = FILMS.map(([t, y, r], i) => { const [a, b] = ACCENTS[i % ACCENTS.length];
+  return `<div class="gk-tile" style="background:linear-gradient(135deg,${a},${b})"><span>${y} · as ${esc(r)}</span><b>${esc(t)}</b></div>`; }).join('');
+const photoTiles = GALLERY.map((g, i) => `<div class="gk-tile ph" data-g="${i}"><img src="${g.src}" alt="" loading="lazy"><span>${esc(g.cap)}</span></div>`).join('');
+gkR1.innerHTML = filmTiles + filmTiles;
+gkR2.innerHTML = photoTiles + photoTiles;
+gkR2.addEventListener('click', e => { const t = e.target.closest('[data-g]'); if (t) openLightbox(GALLERY[+t.dataset.g]); });
+let gkRaf = 0, gkPos = 0, gkLastScroll = 0;
+const filmsCard = $('#films .sheet');
+function gkLoop(){
+  const st = filmsCard.scrollTop, boost = (st - gkLastScroll) * .9; gkLastScroll = st;
+  gkPos += (RM ? 0 : .45) + boost;
+  const L1 = gkR1.scrollWidth / 2 || 1, L2 = gkR2.scrollWidth / 2 || 1;
+  const m = (v, L) => ((v % L) + L) % L;
+  gkR1.style.transform = `translateX(${-m(gkPos, L1)}px)`;
+  gkR2.style.transform = `translateX(${-L2 + m(gkPos, L2)}px)`;
+  gkRaf = requestAnimationFrame(gkLoop);
+}
+
+// RK-style 3D ring + film-strip marquees in the gallery sheet
+const ring = $('.ring'), ringStage = $('.ring-stage');
+const RN = GALLERY.length, STEP = 360 / RN;
+GALLERY.forEach((g, i) => {
+  const f = document.createElement('figure');
+  f.innerHTML = `<img src="${g.src}" alt="Vinay Mahadev — ${esc(g.cap)}" loading="lazy"><figcaption>${esc(g.cap)}</figcaption>`;
+  f.addEventListener('click', () => { if (!dragMoved) openLightbox(g); });
+  ring.appendChild(f);
+});
+let ringR = 0;
+function layoutRing(){
+  const w = ring.offsetWidth || 220;
+  ringR = Math.round(w / 2 / Math.tan(Math.PI / RN)) + 40;
+  [...ring.children].forEach((el, i) => el.style.transform = `rotateY(${i * STEP}deg) translateZ(${ringR}px)`);
+}
+let rot = 0, targetRot = 0, dragging = false, dragMoved = false, lastX = 0, hovering = false, ringRaf = 0;
+ringStage.addEventListener('pointerdown', e => { dragging = true; dragMoved = false; lastX = e.clientX; ringStage.classList.add('dragging'); });
+addEventListener('pointermove', e => {
+  if (!dragging) return;
+  const dx = e.clientX - lastX; if (Math.abs(dx) > 2) dragMoved = true;
+  lastX = e.clientX; targetRot += dx * .35; rot = targetRot;
+});
+addEventListener('pointerup', () => {
+  if (!dragging) return;
+  dragging = false; ringStage.classList.remove('dragging');
+  targetRot = Math.round(targetRot / STEP) * STEP;
+  setTimeout(() => dragMoved = false, 0);
+});
+ringStage.addEventListener('mouseenter', () => hovering = true);
+ringStage.addEventListener('mouseleave', () => hovering = false);
+$('.rbtn.prev').addEventListener('click', () => targetRot = Math.round(targetRot / STEP) * STEP + STEP);
+$('.rbtn.next').addEventListener('click', () => targetRot = Math.round(targetRot / STEP) * STEP - STEP);
+function ringLoop(){
+  if (!dragging && !hovering && !RM) targetRot -= .06;
+  rot += (targetRot - rot) * .08;
+  ring.style.transform = `translateZ(-${ringR}px) rotateY(${rot}deg)`;
+  ringRaf = requestAnimationFrame(ringLoop);
+}
+$$('.ftrack').forEach((tr, k) => {
+  const list = k ? [...GALLERY].reverse() : GALLERY;
+  const html = list.map(g => `<div class="fframe" data-g="${GALLERY.indexOf(g)}"><img src="${g.src}" alt="" loading="lazy"></div>`).join('');
+  tr.innerHTML = html + html;
+  tr.addEventListener('click', e => { const t = e.target.closest('[data-g]'); if (t) openLightbox(GALLERY[+t.dataset.g]); });
+});
+
+const SHEET_HOOKS = {
+  films:   { open(){ gkLastScroll = filmsCard.scrollTop; cancelAnimationFrame(gkRaf); gkLoop(); }, close(){ cancelAnimationFrame(gkRaf); } },
+  gallery: { open(){ layoutRing(); cancelAnimationFrame(ringRaf); ringLoop(); }, close(){ cancelAnimationFrame(ringRaf); } }
+};
+addEventListener('resize', () => { if (sheetOpen && sheetOpen.id === 'gallery') layoutRing(); });
 
 /* ---------- boot ---------- */
 setN(); place('hero');
