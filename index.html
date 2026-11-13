@@ -221,8 +221,31 @@ a{color:inherit;text-decoration:none}
 
 .hero-actions{
   display:flex;
-  align-items:center;
-  gap:12px;
+  flex-direction:column;
+  align-items:stretch;
+  gap:10px;
+  width:clamp(260px, 24vw, 340px);
+}
+.btn-about-hero{
+  width:100%;
+  padding:14px 28px;
+  font-size:13.5px;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-align:center;
+}
+.hero-sub-actions{
+  display:flex;
+  gap:10px;
+  width:100%;
+}
+.btn-sub-hero{
+  flex:1 1 0;
+  min-width:0;
+  padding:12px 14px;
+  font-size:11.5px;
+  text-align:center;
+  white-space:nowrap;
 }
 
 /* Capsule Pill Button with User's Color Palette */
@@ -884,14 +907,28 @@ a{color:inherit;text-decoration:none}
     margin:0 auto;
     align-items:stretch;
   }
-  .hero-actions .gk-pill-btn{
+  .btn-about-hero{
     width:100%;
-    padding:13px 24px;
-    font-size:12.5px;
+    padding:15px 24px;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:0.16em;
     text-align:center;
-    justify-content:center;
+    box-shadow:0 6px 20px rgba(96, 193, 229, 0.4), inset 0 2px 8px rgba(255,255,255,0.4);
   }
-    font-size:11.5px;
+  .hero-sub-actions{
+    display:flex;
+    width:100%;
+    gap:10px;
+  }
+  .btn-sub-hero{
+    flex:1 1 0;
+    min-width:0;
+    padding:12px 8px;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-align:center;
+    white-space:nowrap;
   }
   .film-reel-section{
     padding:36px 0 46px;
@@ -972,12 +1009,15 @@ a{color:inherit;text-decoration:none}
     <img class="hero-portrait-img" src="assets/img/hero-cut-hd.webp" alt="Vinay Mahadev actor portrait" width="2200" height="2200" fetchpriority="high">
   </div>
 
-  <!-- Bottom Row: About & Action Buttons -->
+  <!-- Bottom Row: Bio, About & Action Buttons -->
   <div class="hero-bottom-row anim-fade-up" style="animation-delay:0.42s">
-    <p class="hero-bio-line">TRAINED THEATRE ACTOR DEDICATED TO BRINGING GROUNDED, COMPLEX CHARACTERS TO THE SCREEN</p>
+    <p class="hero-bio-line">A THEATRE-TRAINED ACTOR DELIVERING INTENSE DRAMATIC PERFORMANCES END TO END</p>
     <div class="hero-actions">
-      <button class="gk-pill-btn alt" type="button" data-act="showreel">▶ Showreel</button>
-      <a class="gk-pill-btn" href="#cast" data-act="cast">Contact Me</a>
+      <button class="gk-pill-btn btn-about-hero" type="button" data-act="about">About Me</button>
+      <div class="hero-sub-actions">
+        <button class="gk-pill-btn alt btn-sub-hero" type="button" data-act="showreel">▶ Showreel</button>
+        <a class="gk-pill-btn btn-sub-hero" href="#cast" data-act="cast">Contact Me</a>
+      </div>
     </div>
   </div>
 </section>
