@@ -699,7 +699,7 @@ function pose(m){
       x = W/2 - 720*s; y = top + (avail - 640*s)/2 - 90*s;
     }
   } else {
-    if (m === 'hero'){ s = Math.min(W/620, .7*H/680); x = W/2 - 720*s; y = H - 810*s; }
+    if (m === 'hero'){ s = mHero(W, H).s; x = W/2 - 720*s; y = H - 810*s; }
     else {
       const th = ticket.offsetHeight, dh = desc.offsetHeight;
       root.style.setProperty('--th', th + 'px');
@@ -711,17 +711,31 @@ function pose(m){
   return { s, x, y };
 }
 
-const CAM_ID = 'translate(0px,0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
+/* Phone hero: reserve a band for the camera between the handwriting and the top of his head.
+   His head (hair top) sits 150 frame units below the frame top and the frame is bottom-anchored,
+   so shrinking the portrait is what opens the band on short screens. */
+function mHero(W, H){
+  const scriptBottom = 12 + 96*W/430 + .29*W;           // bottom of the handwritten "vinay"
+  const camH = Math.max(78, Math.min(130, .15*H));       // camera's on-screen height
+  const gap = 22;
+  const sFit = (H - scriptBottom - camH - 2*gap) / 660;  // head top (H - 660s) clears the band
+  const s = Math.max(.3, Math.min(W/620, .7*H/680, sFit));
+  return { s, scriptBottom, camH, gap };
+}
+
+const CAM_ID ='translate(0px,0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
 function heroCamVals(){
   const { s, x, y } = G, W = innerWidth, H = innerHeight;
   const vl = Math.max(0, -x/s), vr = Math.min(1440, (W - x)/s), vb = Math.min(810, (H - y)/s);
   let sc, cx, cy;
   if (!isM()){ sc = .34; cx = vl + 18/s + 60 + 480*sc; cy = Math.min(620, vb - 40/s - 320*sc); }
   else {
-    // phones: float the camera in the empty band between the handwriting and his hair
-    sc = .3;
-    const scriptBottom = 12 + 96*W/430 + .29*W, headTop = y + 150*s;
-    const ty = Math.max(scriptBottom + 320*sc*s*.9, (scriptBottom + headTop)/2);
+    // phones: the camera lives in the reserved band, left of the hanging badge, never over his face
+    const L = mHero(W, H);
+    // 1.1 = body + handle + tilt + idle bob, so the visual box never reaches his hair
+    sc = Math.min(L.camH / (640*1.1*s), (.5*W) / (960*.95*s));
+    const camH = 640*1.1*sc*s;
+    const ty = L.scriptBottom + L.gap + camH/2;
     cx = (.3*W - x)/s; cy = (ty - y)/s;
   }
   return { tx: cx - 720, ty: cy - 410, sc };
@@ -795,7 +809,8 @@ function entrance(){
     { transform:'rotate(1.6deg)', offset:.8 },
     { opacity:1, transform:'rotate(0deg)' }], { duration:1500, delay:700 }) && setTimeout(() => { if (mode === 'hero' && !busy) startSway(b); }, 700 + 1500 + 20));
   go($('.hint'), [{ opacity:0 }, { opacity:.85 }], { duration:600, delay:1800 });
-  play(bob, [{ transform:'translate(-560px,900px) rotate(-26deg)' }, { transform:'translate(0,0) rotate(0deg)' }],
+  // phones: drop in from above so the flight path never crosses his face
+  play(bob, [{ transform: isM() ? 'translate(0px,-1400px) rotate(-18deg)' : 'translate(-560px,900px) rotate(-26deg)' }, { transform:'translate(0px,0px) rotate(0deg)' }],
     { duration:1400, delay:900, easing:'cubic-bezier(.2,.9,.25,1)' });
   setTimeout(() => { startBob(); afterEntrance(); }, 900 + 1400 + 40);
 }
