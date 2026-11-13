@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -9,58 +9,59 @@
 <meta property="og:description" content="Actor · Hyderabad · Telugu, Hindi & English. Showreel, filmography and casting contact.">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="assets/img/hero.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2128'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ff9e20' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B365D'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2360C1E5' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23A0E0EF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800&family=Anton&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero-cut.webp">
+<link rel="preload" as="image" href="assets/img/hero-cut-hd.webp">
 <style>
-:root, [data-theme="light"]{
-  --orange: 255 158 32;
-  --teal: 33 94 97;
-  --bg: 244 242 242;
-  --fg: 29 33 40;
-  --surface: 255 255 255;
-  --hl: 33 94 97;
-  --hh-from: 33 94 97;
-  --hh-to: 29 33 40;
-  --bg-page: rgb(var(--bg));
-  --text-primary: rgb(var(--fg));
-  --text-secondary: rgba(var(--fg), 0.78);
-  --border-subtle: rgba(var(--fg), 0.15);
-  --nav-link: rgb(var(--fg));
-  --fstrip-bg: #141a24;
-  --sprocket-color: rgba(255, 255, 255, 0.55);
-  --sheet-bg: #ffffff;
-  --sheet-text: #1d2128;
-  --modal-backdrop: rgba(15, 23, 42, 0.65);
-  --pv-bg: rgba(244, 242, 242, 0.96);
-  --pv-card: #ffffff;
-  color-scheme: light;
+/* User Palette: #1B365D (Dark Navy), #005A9C (Ocean Blue), #60C1E5 (Cyan), #A0E0EF (Ice Blue) */
+:root, [data-theme="dark"]{
+  --c-navy: #1B365D;
+  --c-blue: #005A9C;
+  --c-cyan: #60C1E5;
+  --c-ice:  #A0E0EF;
+
+  --bg-page: #091322;
+  --nav-pill-bg: rgba(27, 54, 93, 0.72);
+  --text-primary: #F0F8FF;
+  --text-secondary: rgba(240, 248, 255, 0.76);
+  --border-subtle: rgba(96, 193, 229, 0.22);
+  --hh-from: 96 193 229;   /* #60C1E5 */
+  --hh-to: 0 90 156;      /* #005A9C */
+  --nav-link: #F0F8FF;
+  --fstrip-bg: #07101C;
+  --sprocket-color: rgba(96, 193, 229, 0.55);
+  --sheet-bg: #0F1D33;
+  --sheet-text: #F0F8FF;
+  --modal-backdrop: rgba(7, 16, 28, 0.88);
+  --pv-bg: rgba(9, 19, 34, 0.96);
+  --pv-card: #152740;
+  color-scheme: dark;
 }
 
-[data-theme="dark"]{
-  --orange: 255 158 32;
-  --teal: 33 94 97;
-  --bg: 29 33 40;
-  --fg: 244 242 242;
-  --surface: 39 45 55;
-  --hl: 255 158 32;
-  --hh-from: 96 132 134;
-  --hh-to: 244 242 242;
-  --bg-page: rgb(var(--bg));
-  --text-primary: rgb(var(--fg));
-  --text-secondary: rgba(var(--fg), 0.78);
-  --border-subtle: rgba(var(--fg), 0.15);
-  --nav-link: rgb(var(--fg));
-  --fstrip-bg: #090d14;
-  --sprocket-color: rgba(180, 215, 255, 0.5);
-  --sheet-bg: #f6f7f5;
-  --sheet-text: #0d0f12;
-  --modal-backdrop: rgba(1, 5, 12, 0.86);
-  --pv-bg: rgba(29, 33, 40, 0.96);
-  --pv-card: #272d37;
-  color-scheme: dark;
+[data-theme="light"]{
+  --c-navy: #1B365D;
+  --c-blue: #005A9C;
+  --c-cyan: #60C1E5;
+  --c-ice:  #A0E0EF;
+
+  --bg-page: #EEF6FB;
+  --nav-pill-bg: rgba(255, 255, 255, 0.88);
+  --text-primary: #1B365D;
+  --text-secondary: rgba(27, 54, 93, 0.76);
+  --border-subtle: rgba(0, 90, 156, 0.18);
+  --hh-from: 0 90 156;    /* #005A9C */
+  --hh-to: 27 54 93;      /* #1B365D */
+  --nav-link: #1B365D;
+  --fstrip-bg: #13243C;
+  --sprocket-color: rgba(255, 255, 255, 0.6);
+  --sheet-bg: #FFFFFF;
+  --sheet-text: #1B365D;
+  --modal-backdrop: rgba(11, 22, 38, 0.65);
+  --pv-bg: rgba(238, 246, 251, 0.96);
+  --pv-card: #FFFFFF;
+  color-scheme: light;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -73,67 +74,75 @@ body{
   color:var(--text-primary);
   font-family:'Kanit',sans-serif;
   -webkit-font-smoothing:antialiased;
-  transition:background-color .3s ease,color .3s ease;
+  transition:background-color .35s ease,color .35s ease;
 }
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid rgb(var(--orange));outline-offset:3px}
+:focus-visible{outline:2px solid var(--c-cyan);outline-offset:3px}
 
-/* ---------- Top Navigation (GK Style) ---------- */
-.gk-nav{
+/* ---------- Centered Navigation Header ---------- */
+.header-wrap{
   position:relative;
-  z-index:30;
+  z-index:40;
   display:flex;
+  justify-content:center;
   align-items:center;
-  justify-content:space-between;
-  padding:24px 32px 16px;
+  padding:20px 20px 10px;
   width:100%;
-  max-width:1440px;
-  margin:0 auto;
 }
-.nav-links{
+.gk-nav-centered{
   display:flex;
   align-items:center;
-  gap:clamp(16px, 3.5vw, 48px);
+  justify-content:center;
+  gap:clamp(12px, 2.8vw, 36px);
+  padding:10px 28px;
+  border-radius:9999px;
+  background:var(--nav-pill-bg);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border:1.5px solid var(--border-subtle);
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  transition:background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .nav-link{
-  font-size:clamp(13px, 1.25vw, 17px);
+  font-size:clamp(13px, 1.15vw, 16px);
   font-weight:600;
   text-transform:uppercase;
   letter-spacing:0.12em;
   color:var(--nav-link);
-  transition:opacity 0.2s ease, transform 0.2s ease;
+  transition:color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space:nowrap;
 }
 .nav-link:hover{
-  opacity:0.65;
+  color:var(--c-cyan);
   transform:translateY(-1px);
 }
 
-/* Circular Theme Toggle Button (GK Style) */
+/* Circular Theme Toggle Button */
 .gk-theme-toggle{
   display:grid;
   place-items:center;
-  width:42px;
-  height:42px;
+  width:36px;
+  height:36px;
   border-radius:50%;
-  border:2px solid rgba(var(--fg), 0.3);
+  border:1.5px solid var(--border-subtle);
   color:var(--text-primary);
+  background:rgba(255,255,255,0.06);
   transition:all 0.2s ease;
   flex-shrink:0;
 }
 .gk-theme-toggle:hover{
-  border-color:rgb(var(--orange));
-  color:rgb(var(--orange));
-  transform:scale(1.08);
+  border-color:var(--c-cyan);
+  color:var(--c-cyan);
+  transform:scale(1.1);
 }
-.gk-theme-toggle svg{width:20px;height:20px}
+.gk-theme-toggle svg{width:18px;height:18px}
 
-/* ---------- Hero Section (GK Style) ---------- */
+/* ---------- Hero Section (3D Stage) ---------- */
 .hero-stage{
   position:relative;
-  min-height:calc(100vh - 82px);
-  min-height:calc(100dvh - 82px);
+  min-height:calc(100vh - 84px);
+  min-height:calc(100dvh - 84px);
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -141,6 +150,7 @@ a{color:inherit;text-decoration:none}
   padding:0 32px 36px;
   max-width:1440px;
   margin:0 auto;
+  perspective:1200px;
 }
 
 /* Massive Single-Line Name Heading */
@@ -150,6 +160,8 @@ a{color:inherit;text-decoration:none}
   text-align:center;
   margin-top:clamp(4px, 1.5vh, 20px);
   z-index:1;
+  pointer-events:none;
+  user-select:none;
 }
 .hero-heading{
   font-family:'Kanit',sans-serif;
@@ -165,34 +177,38 @@ a{color:inherit;text-decoration:none}
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
-  user-select:none;
-  pointer-events:none;
+  will-change:transform;
 }
 
-/* Hero Portrait Cutout (No background plate) */
+/* Resized High-Quality 3D Hero Portrait Cutout */
 .hero-portrait-box{
   position:absolute;
   left:50%;
   bottom:0;
   transform:translateX(-50%);
   z-index:10;
-  width:min(580px, 86vw);
-  max-height:80vh;
+  width:min(820px, 92vw);
+  max-height:86vh;
   display:flex;
   justify-content:center;
   align-items:flex-end;
   pointer-events:none;
+  transform-style:preserve-3d;
+  will-change:transform;
 }
 .hero-portrait-img{
   width:100%;
   height:auto;
-  max-height:78vh;
+  max-height:84vh;
   object-fit:contain;
   object-position:bottom center;
-  filter:drop-shadow(0 16px 36px rgba(0,0,0,0.22));
+  filter:drop-shadow(0 20px 42px rgba(0,0,0,0.32));
+  -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 88%, transparent 100%);
+  mask-image:linear-gradient(180deg, #000 0%, #000 88%, transparent 100%);
   user-select:none;
   display:block;
-  will-change:transform;
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
 }
 
 /* Bottom Controls Row */
@@ -223,7 +239,7 @@ a{color:inherit;text-decoration:none}
   gap:12px;
 }
 
-/* Capsule Pill Button (Exact GK Style) */
+/* Capsule Pill Button with User's Color Palette */
 .gk-pill-btn{
   display:inline-flex;
   align-items:center;
@@ -236,8 +252,8 @@ a{color:inherit;text-decoration:none}
   text-transform:uppercase;
   letter-spacing:0.18em;
   color:#ffffff;
-  background:linear-gradient(123deg, #1D2128 5%, #215E61 40%, #C9781A 78%, #FF9E20 100%);
-  box-shadow:0px 4px 14px rgba(255, 158, 32, 0.28), 4px 4px 14px #215E61 inset;
+  background:linear-gradient(123deg, var(--c-navy) 5%, var(--c-blue) 45%, var(--c-cyan) 82%, var(--c-ice) 100%);
+  box-shadow:0px 4px 16px rgba(96, 193, 229, 0.35), 4px 4px 14px var(--c-blue) inset;
   outline:2px solid rgba(255, 255, 255, 0.85);
   outline-offset:-3px;
   transition:transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
@@ -247,11 +263,11 @@ a{color:inherit;text-decoration:none}
 }
 .gk-pill-btn:hover{
   transform:scale(1.05);
-  box-shadow:0px 8px 24px rgba(255, 158, 32, 0.45), 4px 4px 14px #215E61 inset;
+  box-shadow:0px 8px 24px rgba(96, 193, 229, 0.5), 4px 4px 14px var(--c-blue) inset;
 }
 .gk-pill-btn.alt{
-  background:linear-gradient(123deg, #1D2128 10%, #215E61 70%, #2d7a7e 100%);
-  box-shadow:0px 4px 14px rgba(33, 94, 97, 0.35), 4px 4px 14px #1D2128 inset;
+  background:linear-gradient(123deg, var(--c-navy) 10%, var(--c-blue) 75%, var(--c-cyan) 100%);
+  box-shadow:0px 4px 14px rgba(0, 90, 156, 0.35), 4px 4px 14px var(--c-navy) inset;
 }
 
 /* ---------- 35mm Film Reel Section (Under Hero) ---------- */
@@ -273,7 +289,7 @@ a{color:inherit;text-decoration:none}
   font-weight:700;
   font-size:13px;
   letter-spacing:0.2em;
-  color:rgb(var(--orange));
+  color:var(--c-cyan);
   text-transform:uppercase;
   margin-bottom:6px;
 }
@@ -432,7 +448,7 @@ a{color:inherit;text-decoration:none}
   font-weight:800;
   font-size:14px;
   letter-spacing:0.12em;
-  color:rgb(var(--orange));
+  color:var(--c-cyan);
 }
 .pv-title{
   font-weight:700;
@@ -526,7 +542,7 @@ a{color:inherit;text-decoration:none}
   transition:background 0.2s,transform 0.2s;
 }
 .pv-dot.active{
-  background:rgb(var(--orange));
+  background:var(--c-cyan);
   transform:scale(1.35);
 }
 .pv-hint{
@@ -569,7 +585,7 @@ a{color:inherit;text-decoration:none}
   right:44px;top:22px;
   height:34px;
   padding:0 16px;
-  background:#1d2128;
+  background:var(--c-navy);
   color:#fff;
   border-radius:9999px;
   font-weight:700;
@@ -583,7 +599,7 @@ a{color:inherit;text-decoration:none}
   font-weight:700;
   font-size:13px;
   letter-spacing:0.18em;
-  color:rgb(var(--teal));
+  color:var(--c-cyan);
   text-transform:uppercase;
 }
 .sheet h2{
@@ -621,14 +637,14 @@ a{color:inherit;text-decoration:none}
   flex-wrap:wrap;
   gap:16px;
   padding-top:10px;
-  border-top:1.5px dotted #ccc;
+  border-top:1.5px dotted rgba(96,193,229,0.3);
 }
 .sr-tags{
   display:flex;
   gap:12px;
   font-weight:700;
   font-size:13px;
-  color:#666;
+  color:var(--text-secondary);
   text-transform:uppercase;
   letter-spacing:0.08em;
 }
@@ -713,21 +729,21 @@ a{color:inherit;text-decoration:none}
   gap:12px;
   align-items:center;
   padding:7px 6px;
-  border-bottom:1.5px dotted #2a2a2a;
+  border-bottom:1.5px dotted rgba(96,193,229,0.25);
   border-radius:4px;
   cursor:pointer;
   transition:background 0.2s ease;
 }
-.credits li:hover{background:rgba(0,0,0,0.04)}
-.credits li:hover b{color:rgb(var(--teal))}
-.credits .y{font-weight:700;font-size:13px;color:#4b5563;font-variant-numeric:tabular-nums}
+.credits li:hover{background:rgba(96,193,229,0.06)}
+.credits li:hover b{color:var(--c-cyan)}
+.credits .y{font-weight:700;font-size:13px;color:var(--c-cyan);font-variant-numeric:tabular-nums}
 .credits .thumb{
   display:block;
   width:42px;height:58px;
   border-radius:4px;
   overflow:hidden;
   box-shadow:0 3px 8px rgba(0,0,0,0.25);
-  border:1px solid rgba(0,0,0,0.15);
+  border:1px solid rgba(255,255,255,0.15);
   flex-shrink:0;
   cursor:zoom-in;
   transition:transform 0.2s ease,box-shadow 0.2s ease;
@@ -739,9 +755,9 @@ a{color:inherit;text-decoration:none}
 .credits em{font-style:normal;font-weight:700;font-size:12px;letter-spacing:0.06em;text-transform:uppercase}
 
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.chips li{background:#1d2128;color:#fff;font-weight:650;font-size:14px;padding:7px 12px;box-shadow:0 3px 0 rgba(0,0,0,0.18)}
+.chips li{background:var(--c-navy);color:#fff;font-weight:650;font-size:14px;padding:7px 12px;box-shadow:0 3px 0 rgba(0,0,0,0.18)}
 .plain{list-style:none}
-.plain li{padding:8px 0 6px;border-bottom:1.5px dotted #2a2a2a;font-weight:500;font-size:15px}
+.plain li{padding:8px 0 6px;border-bottom:1.5px dotted rgba(96,193,229,0.25);font-weight:500;font-size:15px}
 .plain li b{font-weight:800}
 
 /* Cast modal */
@@ -753,7 +769,7 @@ a{color:inherit;text-decoration:none}
   box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);
 }
 .stats{margin-top:16px}
-.stats div{display:flex;justify-content:space-between;gap:16px;padding:8px 0 6px;border-bottom:1.5px dotted #2a2a2a;font-size:14px}
+.stats div{display:flex;justify-content:space-between;gap:16px;padding:8px 0 6px;border-bottom:1.5px dotted rgba(96,193,229,0.25);font-size:14px}
 .stats dt{font-weight:800;letter-spacing:0.08em;text-transform:uppercase;font-size:12px}
 .stats dd{font-weight:600;text-align:right}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
@@ -763,7 +779,7 @@ a{color:inherit;text-decoration:none}
   gap:8px;
   height:42px;
   padding:0 18px;
-  background:#1d2128;
+  background:var(--c-navy);
   color:#fff;
   border-radius:9999px;
   font-weight:650;
@@ -772,7 +788,7 @@ a{color:inherit;text-decoration:none}
   transition:transform 0.2s;
 }
 .links a:hover{transform:scale(1.04)}
-.links a.alt{background:transparent;color:#1d2128;border:2px solid #1d2128}
+.links a.alt{background:transparent;color:var(--text-primary);border:2px solid var(--border-subtle)}
 
 /* Lightbox */
 .lightbox{
@@ -791,33 +807,33 @@ a{color:inherit;text-decoration:none}
 .lightbox figcaption{margin-top:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:#fff;opacity:0.9}
 
 /* ---------- Entrance Animations ---------- */
-.anim-fade-down{animation:fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both}
-.anim-fade-up{animation:fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both}
-.anim-portrait{animation:portraitUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both}
+.anim-fade-down{animation:fadeDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) both}
+.anim-fade-up{animation:fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both}
+.anim-portrait{animation:portraitUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) both}
 
 @keyframes fadeDown{
-  from{opacity:0;transform:translateY(-20px)}
+  from{opacity:0;transform:translateY(-24px)}
   to{opacity:1;transform:translateY(0)}
 }
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
+  from{opacity:0;transform:translateY(35px)}
   to{opacity:1;transform:translateY(0)}
 }
 @keyframes portraitUp{
-  from{opacity:0;transform:translateX(-50%) translateY(45px)}
+  from{opacity:0;transform:translateX(-50%) translateY(55px)}
   to{opacity:1;transform:translateX(-50%) translateY(0)}
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width:820px){
-  .gk-nav{padding:18px 18px 10px}
-  .nav-links{gap:14px}
+  .header-wrap{padding:14px 12px 6px}
+  .gk-nav-centered{gap:12px;padding:8px 18px}
   .nav-link{font-size:12px;letter-spacing:0.06em}
-  .gk-theme-toggle{width:36px;height:36px}
+  .gk-theme-toggle{width:32px;height:32px}
   .hero-stage{padding:0 18px 24px}
   .hero-heading{font-size:clamp(30px, 11.2vw, 76px);margin-top:8px}
-  .hero-portrait-box{width:min(440px, 94vw);max-height:68vh}
-  .hero-portrait-img{max-height:66vh}
+  .hero-portrait-box{width:min(480px, 94vw);max-height:72vh}
+  .hero-portrait-img{max-height:70vh}
   .hero-bottom-row{flex-direction:column;align-items:center;text-align:center;gap:16px;padding-top:10px}
   .hero-bio-line{max-width:320px;font-size:12px}
   .gk-pill-btn{padding:12px 28px;font-size:12px}
@@ -843,47 +859,47 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
-<!-- Top Navigation (GK Style) -->
-<nav class="gk-nav anim-fade-down" aria-label="Primary Navigation">
-  <div class="nav-links">
+<!-- Centered Header Navigation -->
+<header class="header-wrap anim-fade-down">
+  <nav class="gk-nav-centered" aria-label="Primary Navigation">
     <a class="nav-link" href="#hero" data-act="hero">About</a>
     <button class="nav-link" type="button" data-act="showreel">Showreel</button>
     <button class="nav-link" type="button" data-act="gallery">Gallery</button>
     <a class="nav-link" href="#films" data-act="films">Filmography</a>
     <a class="nav-link" href="#cast" data-act="cast">Contact</a>
-  </div>
-  <button class="gk-theme-toggle" id="theme-btn" type="button" aria-label="Toggle theme">
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </button>
-</nav>
+    <button class="gk-theme-toggle" id="theme-btn" type="button" aria-label="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </button>
+  </nav>
+</header>
 
-<!-- Hero Section (GK Style) -->
+<!-- Hero Section (3D Interactive Stage) -->
 <section class="hero-stage" id="hero" aria-label="Vinay Mahadev Hero">
   <!-- Massive Single-Line Name Heading (Behind Cutout) -->
   <div class="heading-wrap anim-fade-up" style="animation-delay:0.12s">
     <h1 class="hero-heading">VINAY MAHADEV</h1>
   </div>
 
-  <!-- Hero Portrait Cutout (No background plate) -->
-  <div class="hero-portrait-box anim-portrait" style="animation-delay:0.3s">
-    <img class="hero-portrait-img" src="assets/img/hero-cut.webp" alt="Vinay Mahadev actor portrait" width="1400" height="1400" fetchpriority="high">
+  <!-- Resized High-Quality 3D Hero Portrait Cutout -->
+  <div class="hero-portrait-box anim-portrait" style="animation-delay:0.28s">
+    <img class="hero-portrait-img" src="assets/img/hero-cut-hd.webp" alt="Vinay Mahadev actor portrait" width="1400" height="1400" fetchpriority="high">
   </div>
 
   <!-- Bottom Row: Bio on Left, Capsule Pill Buttons on Right -->
-  <div class="hero-bottom-row anim-fade-up" style="animation-delay:0.45s">
+  <div class="hero-bottom-row anim-fade-up" style="animation-delay:0.42s">
     <p class="hero-bio-line">A TELUGU &amp; HINDI ACTOR DELIVERING INTENSE DRAMATIC PERFORMANCES END TO END</p>
     <div class="hero-actions">
       <button class="gk-pill-btn alt" type="button" data-act="showreel">▶ Showreel</button>
@@ -1050,7 +1066,7 @@ const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]));
 const RM = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-/* ---------- Theme Switcher (GK Style) ---------- */
+/* ---------- Theme Switcher ---------- */
 const themeBtn = $('#theme-btn');
 const iconMoon = themeBtn?.querySelector('.icon-moon');
 const iconSun = themeBtn?.querySelector('.icon-sun');
@@ -1069,16 +1085,103 @@ function applyTheme(theme) {
   }
 }
 
-let savedTheme = 'light';
+let savedTheme = 'dark';
 try { savedTheme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); } catch (e) {}
 applyTheme(savedTheme);
 
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
     applyTheme(current === 'dark' ? 'light' : 'dark');
   });
 }
+
+/* ---------- 3D Drag & Parallax Engine (GK Style) ---------- */
+const heroStage = $('#hero');
+const portraitBox = $('.hero-portrait-box');
+const heading = $('.hero-heading');
+
+let targetRotX = 0, targetRotY = 0, targetPosX = 0, targetPosY = 0;
+let targetHeadX = 0, targetHeadY = 0;
+let curRotX = 0, curRotY = 0, curPosX = 0, curPosY = 0;
+let curHeadX = 0, curHeadY = 0, curScrollY = 0;
+let isInteracting = false;
+
+function update3DPose(clientX, clientY) {
+  if (!heroStage || RM) return;
+  const rect = heroStage.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const dx = clientX - centerX;
+  const dy = clientY - centerY;
+
+  // 3D tilt & translation for the portrait
+  targetRotY = (dx / (rect.width / 2)) * 10;
+  targetRotX = -(dy / (rect.height / 2)) * 8;
+  targetPosX = (dx / (rect.width / 2)) * 26;
+  targetPosY = (dy / (rect.height / 2)) * 16;
+
+  // Counter parallax for heading behind
+  targetHeadX = -(dx / (rect.width / 2)) * 16;
+  targetHeadY = -(dy / (rect.height / 2)) * 10;
+}
+
+if (heroStage && !RM) {
+  window.addEventListener('mousemove', e => {
+    isInteracting = true;
+    update3DPose(e.clientX, e.clientY);
+  });
+
+  // Touch move / drag support for mobile
+  heroStage.addEventListener('touchmove', e => {
+    if (e.touches.length > 0) {
+      isInteracting = true;
+      update3DPose(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  heroStage.addEventListener('touchend', () => {
+    isInteracting = false;
+    targetRotX = 0; targetRotY = 0; targetPosX = 0; targetPosY = 0;
+    targetHeadX = 0; targetHeadY = 0;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    isInteracting = false;
+    targetRotX = 0; targetRotY = 0; targetPosX = 0; targetPosY = 0;
+    targetHeadX = 0; targetHeadY = 0;
+  });
+}
+
+// Unified Render Loop with inertia dampening & scroll tracking
+function loop3D() {
+  if (!RM) {
+    const ease = isInteracting ? 0.08 : 0.05;
+    curRotX += (targetRotX - curRotX) * ease;
+    curRotY += (targetRotY - curRotY) * ease;
+    curPosX += (targetPosX - curPosX) * ease;
+    curPosY += (targetPosY - curPosY) * ease;
+    curHeadX += (targetHeadX - curHeadX) * ease;
+    curHeadY += (targetHeadY - curHeadY) * ease;
+
+    const sy = window.scrollY || window.pageYOffset || 0;
+    curScrollY += (sy - curScrollY) * 0.1;
+
+    if (portraitBox) {
+      // 3D parallax displacement + perspective tilt + scroll glide
+      const scrollShift = curScrollY * 0.32;
+      portraitBox.style.transform = `translateX(calc(-50% + ${curPosX.toFixed(2)}px)) translateY(${(curPosY + scrollShift).toFixed(2)}px) rotateY(${curRotY.toFixed(2)}deg) rotateX(${curRotX.toFixed(2)}deg)`;
+    }
+
+    if (heading) {
+      // Subtle counter-parallax for deep stereoscopic 3D
+      const headScroll = -curScrollY * 0.14;
+      heading.style.transform = `translate3d(${curHeadX.toFixed(2)}px, ${(curHeadY + headScroll).toFixed(2)}px, 0)`;
+    }
+  }
+  requestAnimationFrame(loop3D);
+}
+requestAnimationFrame(loop3D);
 
 /* ---------- 12 Ordered Photos for Gallery & Film Reel ---------- */
 const IMG = 'assets/img/';
@@ -1233,7 +1336,7 @@ const FILMS = [
   ['Romantic Criminals',2019,'Mahesh',POSTERS+'romantic-criminals.jpg'],
   ['Dear Comrade',2019,'Vinay',POSTERS+'dear-comrade.jpg']
 ];
-const ACCENTS = [['#0a1f3a','#2f6fd1'], ['#3a0d14','#d13b3b'], ['#101318','#5b6470'], ['#123561','#4aa3ff'], ['#0b2a3a','#2fb3c9'], ['#2a1840','#7b5cd6']];
+const ACCENTS = [['#1B365D','#005A9C'], ['#005A9C','#60C1E5'], ['#0B1626','#1B365D'], ['#1B365D','#60C1E5'], ['#005A9C','#A0E0EF'], ['#0C1B30','#005A9C']];
 
 // Lightbox for film posters
 const lb = $('#lightbox'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption');
