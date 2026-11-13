@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Vinay Mahadev — Actor Portfolio</title>
-<meta name="description" content="Vinay Mahadev — actor based in Hyderabad. Telugu, Hindi and English. Saripodhaa Sanivaaram, Ambajipeta Marriage Band, Dear Comrade, Mowgli, Champion. Nandi Award winner for theatre.">
+<meta name="description" content="Vinay Mahadev — actor based in Hyderabad. Telugu, Hindi and English. Saripodhaa Sanivaaram, Ambajipeta Marriage Band, Dear Comrade, Mowgli, Champion, Ranabali, Irumudi. Nandi Award winner for theatre.">
 <meta property="og:title" content="Vinay Mahadev — Actor">
 <meta property="og:description" content="Actor · Hyderabad · Telugu, Hindi & English. Showreel, filmography and casting contact.">
 <meta property="og:type" content="profile">
@@ -523,7 +523,7 @@ a{color:inherit}
   <div class="desc">
     <div class="k"></div>
     <p></p>
-    <a class="cta" href="https://www.youtube.com/watch?v=Uk-x7Rpu6-o" target="_blank" rel="noopener" hidden>view showreel ↗</a>
+    <a class="cta" href="https://youtu.be/zJeto44gLRs?si=-pjQ5Hni-QLB-6KM" target="_blank" rel="noopener" hidden>view showreel ↗</a>
     <div class="num">01 / 05</div>
   </div>
 
@@ -551,6 +551,8 @@ a{color:inherit}
       <section>
         <h3>Feature films</h3>
         <ol class="credits">
+          <li><span class="y">2025</span><b>Ranabali</b></li>
+          <li><span class="y">2025</span><b>Irumudi</b></li>
           <li><span class="y">2025</span><b>Champion</b><em>as Bhikshapati</em></li>
           <li><span class="y">2025</span><b>Mowgli</b><em>as Kasi</em></li>
           <li><span class="y">2025</span><b>Hebbuli Cut (Kannada)</b><em>as Gowda</em></li>
@@ -567,7 +569,7 @@ a{color:inherit}
       </section>
       <section>
         <h3>In production</h3>
-        <ul class="chips"><li>Irumudi</li><li>Ranabali</li><li>Mysaa</li><li>Rowdy Janardhan</li><li>Fauzi</li></ul>
+        <ul class="chips"><li>Mysaa</li><li>Rowdy Janardhan</li><li>Fauzi</li></ul>
         <h3>Theatre</h3>
         <ul class="plain"><li>NSD Theatre Workshop</li><li>Several plays with <b>Bahurupa Nata Samaikya</b></li></ul>
         <h3>Awards</h3>
@@ -625,7 +627,7 @@ a{color:inherit}
           <a href="tel:+919849330362">call +91 98493 30362</a>
           <a href="mailto:vinaymahadev.11@gmail.com">vinaymahadev.11@gmail.com</a>
           <a class="alt" href="https://www.instagram.com/vinaymahadev_actor/" target="_blank" rel="noopener">instagram @vinaymahadev_actor ↗</a>
-          <a class="alt sr" href="https://www.youtube.com/watch?v=Uk-x7Rpu6-o" target="_blank" rel="noopener">view showreel ↗</a>
+          <a class="alt sr" href="https://youtu.be/zJeto44gLRs?si=-pjQ5Hni-QLB-6KM" target="_blank" rel="noopener">view showreel ↗</a>
         </div>
         <p class="foot">For auditions, look tests and dates, call or email directly.</p>
       </div>
@@ -639,7 +641,7 @@ a{color:inherit}
 const root = document.documentElement;
 root.classList.add('js');
 
-const SHOWREEL = 'https://www.youtube.com/watch?v=Uk-x7Rpu6-o';
+const SHOWREEL = 'https://youtu.be/zJeto44gLRs?si=-pjQ5Hni-QLB-6KM';
 const IMG = 'assets/img/';
 const CASES = [
   { t:'SHOWREEL', rows:['VINAY MAHADEV','ACTING REEL','VIEW SHOWREEL ↗'], k:'// showreel',
@@ -686,17 +688,40 @@ let mode = 'hero', busy = false, idx = 0, sheetOpen = null;
 let G = { s:1, x:0, y:0 };
 
 /* ---------- geometry ---------- */
-function setN(){ isM() ? root.style.removeProperty('--n') : root.style.setProperty('--n', Math.min(innerWidth/1440, innerHeight/900) + 'px'); }
+function setN(){
+  if (isM()){ root.style.removeProperty('--n'); }
+  else {
+    const isPortrait = innerHeight / innerWidth > 1.15;
+    const n = isPortrait ? Math.min(innerWidth / 1100, 1.0) : Math.min(innerWidth/1440, innerHeight/900);
+    root.style.setProperty('--n', n + 'px');
+  }
+}
 
 function pose(m){
   const W = innerWidth, H = innerHeight; let s, x, y;
   if (!isM()){
-    const cover = Math.max(W/1440, H/810), u = Math.min(W/1440, H/900);
-    if (m === 'hero'){ s = cover; x = (W - 1440*s)/2; y = 0; }
-    else {
-      const top = 66*u, bot = 44*u, avail = H - top - bot;
-      s = Math.min(avail/640, (W - 470*u)/960);
-      x = W/2 - 720*s; y = top + (avail - 640*s)/2 - 90*s;
+    const isPortrait = H / W > 1.15;
+    if (m === 'hero'){
+      if (isPortrait){
+        s = Math.min(W / 960, (H - 120) / 1000);
+        x = (W - 1440*s)/2;
+        y = Math.max(0, (H - 810*s)/2 - 30);
+      } else {
+        const cover = Math.max(W/1440, H/810);
+        s = cover; x = (W - 1440*s)/2; y = 0;
+      }
+    } else {
+      if (isPortrait){
+        const avail = Math.min(W - 40, H * 0.45);
+        s = Math.min(avail / 720, 1.2);
+        x = W/2 - 720*s;
+        y = Math.max(120, H*0.48 - 320*s);
+      } else {
+        const u = Math.min(W/1440, H/900);
+        const top = 66*u, bot = 44*u, avail = H - top - bot;
+        s = Math.min(avail/640, (W - 470*u)/960);
+        x = W/2 - 720*s; y = top + (avail - 640*s)/2 - 90*s;
+      }
     }
   } else {
     if (m === 'hero'){ s = mHero(W, H).s; x = W/2 - 720*s; y = H - 810*s; }
@@ -725,8 +750,14 @@ function heroCamVals(){
   const { s, x, y } = G, W = innerWidth, H = innerHeight;
   const vl = Math.max(0, -x/s), vr = Math.min(1440, (W - x)/s), vb = Math.min(810, (H - y)/s);
   let sc, cx, cy;
-  if (!isM()){ sc = .34; cx = vl + 18/s + 60 + 480*sc; cy = Math.min(620, vb - 40/s - 320*sc); }
-  else {
+  if (!isM()){
+    const isPortrait = H / W > 1.15;
+    sc = isPortrait ? 0.26 : .34;
+    // Vinay body starts at frame x = 490. Ensure camera right edge (cx + 480*sc) never touches Vinay:
+    const maxCamCx = 480 - 480*sc;
+    cx = Math.min(maxCamCx, vl + 18/s + 40 + 480*sc);
+    cy = isPortrait ? Math.min(680, Math.max(480, (H/s - y/s) * 0.45)) : Math.min(620, vb - 40/s - 320*sc);
+  } else {
     // phones: small compact camera tucked to the left, clear of Vinay's head, face and hero portrait
     const L = mHero(W, H);
     sc = L.camH / (640 * s);
@@ -747,10 +778,22 @@ function fitHero(){
   const vl = Math.max(0, -x/s), vr = Math.min(1440, (W - x)/s), pad = 18/s;
   wm.style.left = (vl + .6*pad) + 'px';
   wm.style.width = (vr - vl - 1.2*pad) + 'px';
-  badge.style.left = Math.min(986, vr - pad - 417) + 'px';
+  const isPortrait = H / W > 1.15;
+  // Never drag the badge into Vinay (Vinay face right edge is 850, shoulder is 910)
+  const minBadgeLeft = isPortrait ? 900 : 920;
+  badge.style.left = Math.max(minBadgeLeft, Math.min(986, vr - pad - 417)) + 'px';
   const vb = Math.min(810, (H - y)/s);
   badge.style.top = Math.min(-165, vb - 56/s - 935) + 'px';
   script.style.left = (vl + pad + 70) + 'px';
+  if (isPortrait){
+    const availRight = vr - minBadgeLeft;
+    const bScale = Math.min(1, Math.max(0.65, availRight / 380));
+    badge.style.transform = `scale(${bScale})`;
+    badge.style.transformOrigin = '288px 0';
+  } else {
+    badge.style.transform = '';
+    badge.style.transformOrigin = '';
+  }
 }
 
 function place(m){
@@ -1117,6 +1160,7 @@ const GALLERY = [
   ['white-shirt-studio','Studio'], ['portrait-white-kurta','Portrait'], ['nandi-award-stage','On stage · award night']
 ].map(([n, c]) => ({ src: IMG + n + '.jpg', cap: c }));
 const FILMS = [
+  ['Ranabali',2025,''], ['Irumudi',2025,''],
   ['Champion',2025,'Bhikshapati'], ['Mowgli',2025,'Kasi'], ['Hebbuli Cut',2025,'Gowda'], ['Saripodhaa Sanivaaram',2024,'Martin'],
   ['Ambajipeta Marriage Band',2024,'Prasad'], ['Premakath',2024,'Yadav'], ['Krishna Gadu Ante Oka Range',2023,'Deva'],
   ['Sitaraman',2022,'Naveen'], ['Wilddog',2021,'Qateel'], ['Valasa',2021,'Shankar'], ['Romantic Criminals',2019,'Mahesh'], ['Dear Comrade',2019,'Vinay']
@@ -1134,7 +1178,8 @@ lb.addEventListener('click', closeLightbox);
 // GK-style opposing rows in the filmography sheet
 const gkR1 = $('.gk .r1'), gkR2 = $('.gk .r2');
 const filmTiles = FILMS.map(([t, y, r], i) => { const [a, b] = ACCENTS[i % ACCENTS.length];
-  return `<div class="gk-tile" style="background:linear-gradient(135deg,${a},${b})"><span>${y} · as ${esc(r)}</span><b>${esc(t)}</b></div>`; }).join('');
+  const roleStr = r ? ` · as ${esc(r)}` : '';
+  return `<div class="gk-tile" style="background:linear-gradient(135deg,${a},${b})"><span>${y}${roleStr}</span><b>${esc(t)}</b></div>`; }).join('');
 const photoTiles = GALLERY.map((g, i) => `<div class="gk-tile ph" data-g="${i}"><img src="${g.src}" alt="" loading="lazy"><span>${esc(g.cap)}</span></div>`).join('');
 gkR1.innerHTML = filmTiles + filmTiles;
 gkR2.innerHTML = photoTiles + photoTiles;
