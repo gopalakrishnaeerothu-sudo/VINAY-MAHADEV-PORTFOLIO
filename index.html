@@ -241,6 +241,13 @@ a{color:inherit}
 .gk-tile.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .6s}
 .gk-tile.ph:hover img{transform:scale(1.07)}
 .gk-tile.ph span{position:absolute;left:16px;bottom:14px}
+.gk-tile.flm{cursor:zoom-in}
+.gk-tile.flm .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s;filter:brightness(.82) contrast(1.05)}
+.gk-tile.flm:hover .poster{transform:scale(1.07);filter:brightness(.95) contrast(1.08)}
+.gk-tile.flm .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.42) 42%,rgba(2,6,14,.92) 100%);z-index:1;pointer-events:none}
+.gk-tile.flm span,.gk-tile.flm b{position:relative;z-index:2}
+.gk-tile.flm span{text-shadow:0 2px 6px rgba(0,0,0,.9)}
+.gk-tile.flm b{text-shadow:0 2px 10px rgba(0,0,0,.95)}
 
 /* RK-style gallery: 3D ring + film-strip marquees (dark sheet) */
 .sheet.gal{background:#050b16;color:#fff;overflow-x:hidden}
@@ -283,9 +290,14 @@ a{color:inherit}
 .lightbox figcaption{margin-top:14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.85}
 .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:48px}
 .credits{list-style:none}
-.credits li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:baseline;padding:9px 0 7px;border-bottom:1.5px dotted #2a2a2a}
+.credits li{display:grid;grid-template-columns:46px 42px 1fr auto;gap:12px;align-items:center;padding:7px 6px;border-bottom:1.5px dotted #2a2a2a;border-radius:4px;cursor:pointer;transition:background .2s ease}
+.credits li:hover{background:rgba(0,0,0,.04)}
+.credits li:hover b{color:#0b3a75}
 .credits .y{font-weight:700;font-size:13px;color:#4b5563;font-variant-numeric:tabular-nums}
-.credits b{font:400 22px/1.05 'Anton',Impact,sans-serif;letter-spacing:.01em}
+.credits .thumb{display:block;width:42px;height:58px;border-radius:4px;overflow:hidden;box-shadow:0 3px 8px rgba(0,0,0,.25);border:1px solid rgba(0,0,0,.15);flex-shrink:0;cursor:zoom-in;transition:transform .2s ease,box-shadow .2s ease;background:#0d1117}
+.credits .thumb:hover{transform:scale(1.12);box-shadow:0 8px 18px rgba(0,0,0,.4);z-index:2}
+.credits .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.credits b{font:400 22px/1.05 'Anton',Impact,sans-serif;letter-spacing:.01em;transition:color .2s}
 .credits em{font-style:normal;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .chips li{background:var(--ink);color:#fff;font-weight:650;font-size:14px;padding:7px 12px;box-shadow:0 3px 0 rgba(0,0,0,.18)}
@@ -355,8 +367,11 @@ a{color:inherit}
   .t5{left:50%;right:auto;top:calc(12px + 44*var(--n));margin-left:-34px}
   .cols,.cast{grid-template-columns:1fr;gap:8px}
   .cast .photo{max-width:300px;width:100%}
-  .credits li{grid-template-columns:44px 1fr;row-gap:2px}
-  .credits em{grid-column:2}
+  .credits li{grid-template-columns:36px 36px 1fr;gap:8px 10px;padding:6px 2px}
+  .credits .y{font-size:12px;grid-row:1/span 2;align-self:center}
+  .credits .thumb{width:36px;height:50px;grid-row:1/span 2;align-self:center}
+  .credits b{grid-column:3;font-size:19px;line-height:1.1}
+  .credits em{grid-column:3;font-size:11px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -551,20 +566,20 @@ a{color:inherit}
       <section>
         <h3>Feature films</h3>
         <ol class="credits">
-          <li><span class="y">2026</span><b>Ranabaali</b><em>as Manikanta</em></li>
-          <li><span class="y">2026</span><b>Irumudi</b><em>as Main Gangleader Ganja</em></li>
-          <li><span class="y">2025</span><b>Champion</b><em>as Bhikshapati</em></li>
-          <li><span class="y">2025</span><b>Mowgli</b><em>as Kasi</em></li>
-          <li><span class="y">2025</span><b>Hebbuli Cut (Kannada)</b><em>as Gowda</em></li>
-          <li><span class="y">2024</span><b>Saripodhaa Sanivaaram</b><em>as Martin</em></li>
-          <li><span class="y">2024</span><b>Ambajipeta Marriage Band</b><em>as Prasad</em></li>
-          <li><span class="y">2024</span><b>Premakath</b><em>as Yadav</em></li>
-          <li><span class="y">2023</span><b>Krishna Gadu Ante Oka Range</b><em>as Deva</em></li>
-          <li><span class="y">2022</span><b>Sitaraman</b><em>as Naveen</em></li>
-          <li><span class="y">2021</span><b>Wilddog</b><em>as Qateel</em></li>
-          <li><span class="y">2021</span><b>Valasa</b><em>as Shankar</em></li>
-          <li><span class="y">2019</span><b>Romantic Criminals</b><em>as Mahesh</em></li>
-          <li><span class="y">2019</span><b>Dear Comrade</b><em>as Vinay</em></li>
+          <li data-poster="assets/img/posters/ranabaali.jpg" data-cap="Ranabaali (2026) · as Manikanta"><span class="y">2026</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/ranabaali.jpg" data-cap="Ranabaali (2026) · as Manikanta" aria-label="View Ranabaali poster"><img src="assets/img/posters/ranabaali.jpg" alt="Ranabaali poster" loading="lazy"></a><b>Ranabaali</b><em>as Manikanta</em></li>
+          <li data-poster="assets/img/posters/irumudi.jpg" data-cap="Irumudi (2026) · as Main Gangleader Ganja"><span class="y">2026</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/irumudi.jpg" data-cap="Irumudi (2026) · as Main Gangleader Ganja" aria-label="View Irumudi poster"><img src="assets/img/posters/irumudi.jpg" alt="Irumudi poster" loading="lazy"></a><b>Irumudi</b><em>as Main Gangleader Ganja</em></li>
+          <li data-poster="assets/img/posters/champion.jpg" data-cap="Champion (2025) · as Bhikshapati"><span class="y">2025</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/champion.jpg" data-cap="Champion (2025) · as Bhikshapati" aria-label="View Champion poster"><img src="assets/img/posters/champion.jpg" alt="Champion poster" loading="lazy"></a><b>Champion</b><em>as Bhikshapati</em></li>
+          <li data-poster="assets/img/posters/mowgli.jpg" data-cap="Mowgli (2025) · as Kasi"><span class="y">2025</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/mowgli.jpg" data-cap="Mowgli (2025) · as Kasi" aria-label="View Mowgli poster"><img src="assets/img/posters/mowgli.jpg" alt="Mowgli poster" loading="lazy"></a><b>Mowgli</b><em>as Kasi</em></li>
+          <li data-poster="assets/img/posters/hebbuli-cut.jpg" data-cap="Hebbuli Cut (Kannada) (2025) · as Gowda"><span class="y">2025</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/hebbuli-cut.jpg" data-cap="Hebbuli Cut (Kannada) (2025) · as Gowda" aria-label="View Hebbuli Cut poster"><img src="assets/img/posters/hebbuli-cut.jpg" alt="Hebbuli Cut poster" loading="lazy"></a><b>Hebbuli Cut (Kannada)</b><em>as Gowda</em></li>
+          <li data-poster="assets/img/posters/saripodhaa-sanivaaram.jpg" data-cap="Saripodhaa Sanivaaram (2024) · as Martin"><span class="y">2024</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/saripodhaa-sanivaaram.jpg" data-cap="Saripodhaa Sanivaaram (2024) · as Martin" aria-label="View Saripodhaa Sanivaaram poster"><img src="assets/img/posters/saripodhaa-sanivaaram.jpg" alt="Saripodhaa Sanivaaram poster" loading="lazy"></a><b>Saripodhaa Sanivaaram</b><em>as Martin</em></li>
+          <li data-poster="assets/img/posters/ambajipeta-marriage-band.jpg" data-cap="Ambajipeta Marriage Band (2024) · as Prasad"><span class="y">2024</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/ambajipeta-marriage-band.jpg" data-cap="Ambajipeta Marriage Band (2024) · as Prasad" aria-label="View Ambajipeta Marriage Band poster"><img src="assets/img/posters/ambajipeta-marriage-band.jpg" alt="Ambajipeta Marriage Band poster" loading="lazy"></a><b>Ambajipeta Marriage Band</b><em>as Prasad</em></li>
+          <li data-poster="assets/img/posters/premakath.jpg" data-cap="Premakath (2024) · as Yadav"><span class="y">2024</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/premakath.jpg" data-cap="Premakath (2024) · as Yadav" aria-label="View Premakath poster"><img src="assets/img/posters/premakath.jpg" alt="Premakath poster" loading="lazy"></a><b>Premakath</b><em>as Yadav</em></li>
+          <li data-poster="assets/img/posters/krishna-gadu.jpg" data-cap="Krishna Gadu Ante Oka Range (2023) · as Deva"><span class="y">2023</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/krishna-gadu.jpg" data-cap="Krishna Gadu Ante Oka Range (2023) · as Deva" aria-label="View Krishna Gadu Ante Oka Range poster"><img src="assets/img/posters/krishna-gadu.jpg" alt="Krishna Gadu Ante Oka Range poster" loading="lazy"></a><b>Krishna Gadu Ante Oka Range</b><em>as Deva</em></li>
+          <li data-poster="assets/img/posters/sitaraman.jpg" data-cap="Sitaraman (2022) · as Naveen"><span class="y">2022</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/sitaraman.jpg" data-cap="Sitaraman (2022) · as Naveen" aria-label="View Sitaraman poster"><img src="assets/img/posters/sitaraman.jpg" alt="Sitaraman poster" loading="lazy"></a><b>Sitaraman</b><em>as Naveen</em></li>
+          <li data-poster="assets/img/posters/wild-dog.jpg" data-cap="Wilddog (2021) · as Qateel"><span class="y">2021</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/wild-dog.jpg" data-cap="Wilddog (2021) · as Qateel" aria-label="View Wilddog poster"><img src="assets/img/posters/wild-dog.jpg" alt="Wilddog poster" loading="lazy"></a><b>Wilddog</b><em>as Qateel</em></li>
+          <li data-poster="assets/img/posters/valasa.jpg" data-cap="Valasa (2021) · as Shankar"><span class="y">2021</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/valasa.jpg" data-cap="Valasa (2021) · as Shankar" aria-label="View Valasa poster"><img src="assets/img/posters/valasa.jpg" alt="Valasa poster" loading="lazy"></a><b>Valasa</b><em>as Shankar</em></li>
+          <li data-poster="assets/img/posters/romantic-criminals.jpg" data-cap="Romantic Criminals (2019) · as Mahesh"><span class="y">2019</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/romantic-criminals.jpg" data-cap="Romantic Criminals (2019) · as Mahesh" aria-label="View Romantic Criminals poster"><img src="assets/img/posters/romantic-criminals.jpg" alt="Romantic Criminals poster" loading="lazy"></a><b>Romantic Criminals</b><em>as Mahesh</em></li>
+          <li data-poster="assets/img/posters/dear-comrade.jpg" data-cap="Dear Comrade (2019) · as Vinay"><span class="y">2019</span><a class="thumb" href="#lightbox" data-poster="assets/img/posters/dear-comrade.jpg" data-cap="Dear Comrade (2019) · as Vinay" aria-label="View Dear Comrade poster"><img src="assets/img/posters/dear-comrade.jpg" alt="Dear Comrade poster" loading="lazy"></a><b>Dear Comrade</b><em>as Vinay</em></li>
         </ol>
       </section>
       <section>
@@ -1159,11 +1174,22 @@ const GALLERY = [
   ['intense-closeup','Stare'], ['curls-smile','Curls'], ['tropical-shirt','Easy'], ['gym-physique','Physique'],
   ['white-shirt-studio','Studio'], ['portrait-white-kurta','Portrait'], ['nandi-award-stage','On stage · award night']
 ].map(([n, c]) => ({ src: IMG + n + '.jpg', cap: c }));
+const POSTERS = 'assets/img/posters/';
 const FILMS = [
-  ['Ranabaali',2026,'Manikanta'], ['Irumudi',2026,'Main Gangleader Ganja'],
-  ['Champion',2025,'Bhikshapati'], ['Mowgli',2025,'Kasi'], ['Hebbuli Cut',2025,'Gowda'], ['Saripodhaa Sanivaaram',2024,'Martin'],
-  ['Ambajipeta Marriage Band',2024,'Prasad'], ['Premakath',2024,'Yadav'], ['Krishna Gadu Ante Oka Range',2023,'Deva'],
-  ['Sitaraman',2022,'Naveen'], ['Wilddog',2021,'Qateel'], ['Valasa',2021,'Shankar'], ['Romantic Criminals',2019,'Mahesh'], ['Dear Comrade',2019,'Vinay']
+  ['Ranabaali',2026,'Manikanta',POSTERS+'ranabaali.jpg'],
+  ['Irumudi',2026,'Main Gangleader Ganja',POSTERS+'irumudi.jpg'],
+  ['Champion',2025,'Bhikshapati',POSTERS+'champion.jpg'],
+  ['Mowgli',2025,'Kasi',POSTERS+'mowgli.jpg'],
+  ['Hebbuli Cut',2025,'Gowda',POSTERS+'hebbuli-cut.jpg'],
+  ['Saripodhaa Sanivaaram',2024,'Martin',POSTERS+'saripodhaa-sanivaaram.jpg'],
+  ['Ambajipeta Marriage Band',2024,'Prasad',POSTERS+'ambajipeta-marriage-band.jpg'],
+  ['Premakath',2024,'Yadav',POSTERS+'premakath.jpg'],
+  ['Krishna Gadu Ante Oka Range',2023,'Deva',POSTERS+'krishna-gadu.jpg'],
+  ['Sitaraman',2022,'Naveen',POSTERS+'sitaraman.jpg'],
+  ['Wilddog',2021,'Qateel',POSTERS+'wild-dog.jpg'],
+  ['Valasa',2021,'Shankar',POSTERS+'valasa.jpg'],
+  ['Romantic Criminals',2019,'Mahesh',POSTERS+'romantic-criminals.jpg'],
+  ['Dear Comrade',2019,'Vinay',POSTERS+'dear-comrade.jpg']
 ];
 const ACCENTS = [['#0a1f3a','#2f6fd1'], ['#3a0d14','#d13b3b'], ['#101318','#5b6470'], ['#123561','#4aa3ff'], ['#0b2a3a','#2fb3c9'], ['#2a1840','#7b5cd6']];
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]));
@@ -1177,13 +1203,33 @@ lb.addEventListener('click', closeLightbox);
 
 // GK-style opposing rows in the filmography sheet
 const gkR1 = $('.gk .r1'), gkR2 = $('.gk .r2');
-const filmTiles = FILMS.map(([t, y, r], i) => { const [a, b] = ACCENTS[i % ACCENTS.length];
+const filmTiles = FILMS.map(([t, y, r, p], i) => { const [a, b] = ACCENTS[i % ACCENTS.length];
   const roleStr = r ? ` · as ${esc(r)}` : '';
-  return `<div class="gk-tile" style="background:linear-gradient(135deg,${a},${b})"><span>${y}${roleStr}</span><b>${esc(t)}</b></div>`; }).join('');
+  return `<div class="gk-tile flm" data-f="${i}" style="background:linear-gradient(135deg,${a},${b})"><img class="poster" src="${p}" alt="${esc(t)} poster" loading="lazy"><div class="scrim"></div><span>${y}${roleStr}</span><b>${esc(t)}</b></div>`; }).join('');
 const photoTiles = GALLERY.map((g, i) => `<div class="gk-tile ph" data-g="${i}"><img src="${g.src}" alt="" loading="lazy"><span>${esc(g.cap)}</span></div>`).join('');
 gkR1.innerHTML = filmTiles + filmTiles;
 gkR2.innerHTML = photoTiles + photoTiles;
+gkR1.addEventListener('click', e => {
+  const t = e.target.closest('[data-f]');
+  if (t) {
+    const item = FILMS[+t.dataset.f];
+    if (item && item[3]) {
+      const roleStr = item[2] ? ` · as ${item[2]}` : '';
+      openLightbox({ src: item[3], cap: `${item[0]} (${item[1]})${roleStr}` });
+    }
+  }
+});
 gkR2.addEventListener('click', e => { const t = e.target.closest('[data-g]'); if (t) openLightbox(GALLERY[+t.dataset.g]); });
+const creditsEl = $('.credits');
+if (creditsEl) {
+  creditsEl.addEventListener('click', e => {
+    const item = e.target.closest('[data-poster]');
+    if (item && item.dataset.poster) {
+      e.preventDefault();
+      openLightbox({ src: item.dataset.poster, cap: item.dataset.cap });
+    }
+  });
+}
 let gkRaf = 0, gkPos = 0, gkLastScroll = 0;
 const filmsCard = $('#films .sheet');
 function gkLoop(){
