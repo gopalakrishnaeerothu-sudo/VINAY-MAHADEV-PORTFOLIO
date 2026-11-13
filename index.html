@@ -82,33 +82,38 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Centered Navigation Header ---------- */
 .header-wrap{
-  position:relative;
-  z-index:40;
+  position:sticky;
+  top:16px;
+  z-index:60;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:20px 20px 10px;
+  padding:0 16px;
   width:100%;
+  pointer-events:none;
+  box-sizing:border-box;
 }
 .gk-nav-centered{
-  display:flex;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:clamp(12px, 2.8vw, 36px);
-  padding:10px 28px;
+  gap:clamp(10px, 2.4vw, 36px);
+  padding:10px 24px;
   border-radius:9999px;
   background:var(--nav-pill-bg);
-  -webkit-backdrop-filter:blur(18px);
-  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(20px);
   border:1.5px solid var(--border-subtle);
-  box-shadow:0 10px 30px rgba(0,0,0,0.18);
-  transition:background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:0 12px 36px rgba(0,0,0,0.22);
+  transition:background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  pointer-events:auto;
+  box-sizing:border-box;
 }
 .nav-link{
-  font-size:clamp(13px, 1.15vw, 16px);
+  font-size:clamp(12px, 1.15vw, 15px);
   font-weight:600;
   text-transform:uppercase;
-  letter-spacing:0.12em;
+  letter-spacing:0.1em;
   color:var(--nav-link);
   transition:color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space:nowrap;
@@ -117,6 +122,7 @@ a{color:inherit;text-decoration:none}
   color:var(--c-cyan);
   transform:translateY(-1px);
 }
+.lbl-short{display:none}
 
 /* Circular Theme Toggle Button */
 .gk-theme-toggle{
@@ -130,6 +136,7 @@ a{color:inherit;text-decoration:none}
   background:rgba(255,255,255,0.06);
   transition:all 0.2s ease;
   flex-shrink:0;
+  margin-left:4px;
 }
 .gk-theme-toggle:hover{
   border-color:var(--c-cyan);
@@ -138,7 +145,7 @@ a{color:inherit;text-decoration:none}
 }
 .gk-theme-toggle svg{width:18px;height:18px}
 
-/* ---------- Hero Section (3D Stage) ---------- */
+/* ---------- Hero Section (3D Interactive Stage) ---------- */
 .hero-stage{
   position:relative;
   min-height:calc(100vh - 84px);
@@ -150,7 +157,25 @@ a{color:inherit;text-decoration:none}
   padding:0 32px 36px;
   max-width:1440px;
   margin:0 auto;
-  perspective:1200px;
+  perspective:1400px;
+  user-select:none;
+}
+
+/* Ambient Backlight Glow behind Portrait */
+.hero-ambient-glow{
+  position:absolute;
+  left:50%;
+  top:52%;
+  transform:translate(-50%, -50%);
+  width:min(860px, 94vw);
+  height:min(860px, 94vw);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(96, 193, 229, 0.26) 0%, rgba(0, 90, 156, 0.16) 42%, transparent 72%);
+  pointer-events:none;
+  z-index:4;
+  filter:blur(60px);
+  will-change:transform;
+  transition:opacity 0.4s ease;
 }
 
 /* Massive Single-Line Name Heading */
@@ -159,7 +184,7 @@ a{color:inherit;text-decoration:none}
   overflow:hidden;
   text-align:center;
   margin-top:clamp(4px, 1.5vh, 20px);
-  z-index:1;
+  z-index:2;
   pointer-events:none;
   user-select:none;
 }
@@ -177,6 +202,7 @@ a{color:inherit;text-decoration:none}
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 14px 30px rgba(0, 90, 156, 0.22));
   will-change:transform;
 }
 
@@ -187,28 +213,32 @@ a{color:inherit;text-decoration:none}
   bottom:0;
   transform:translateX(-50%);
   z-index:10;
-  width:min(820px, 92vw);
-  max-height:86vh;
+  width:min(860px, 94vw);
+  max-height:88vh;
   display:flex;
   justify-content:center;
   align-items:flex-end;
-  pointer-events:none;
+  pointer-events:auto;
+  cursor:grab;
+  touch-action:none;
   transform-style:preserve-3d;
   will-change:transform;
+}
+.hero-portrait-box:active{
+  cursor:grabbing;
 }
 .hero-portrait-img{
   width:100%;
   height:auto;
-  max-height:84vh;
+  max-height:86vh;
   object-fit:contain;
   object-position:bottom center;
-  filter:drop-shadow(0 20px 42px rgba(0,0,0,0.32));
-  -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 88%, transparent 100%);
-  mask-image:linear-gradient(180deg, #000 0%, #000 88%, transparent 100%);
+  filter:drop-shadow(0 24px 50px rgba(0,0,0,0.38));
+  -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 82%, transparent 98%);
+  mask-image:linear-gradient(180deg, #000 0%, #000 82%, transparent 98%);
   user-select:none;
   display:block;
   image-rendering:-webkit-optimize-contrast;
-  image-rendering:crisp-edges;
 }
 
 /* Bottom Controls Row */
@@ -374,33 +404,6 @@ a{color:inherit;text-decoration:none}
   transition:transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .fframe:hover img{transform:scale(1.06)}
-.fframe .fbadge{
-  position:absolute;
-  left:10px;top:10px;
-  padding:3px 8px;
-  background:rgba(0,0,0,0.78);
-  color:#fff;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:0.1em;
-  border-radius:3px;
-  z-index:2;
-}
-.fframe .fcaption{
-  position:absolute;
-  inset:auto 0 0 0;
-  padding:20px 10px 8px;
-  background:linear-gradient(transparent,rgba(0,0,0,0.85));
-  color:#fff;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  opacity:0;
-  transition:opacity 0.3s;
-  z-index:2;
-}
-.fframe:hover .fcaption{opacity:1}
 
 @keyframes marquee{to{transform:translateX(-50%)}}
 
@@ -439,28 +442,9 @@ a{color:inherit;text-decoration:none}
 .pv-header{
   width:100%;
   display:flex;
-  justify-content:space-between;
+  justify-content:flex-end;
   align-items:center;
-  padding:12px 16px;
-  gap:16px;
-}
-.pv-counter{
-  font-weight:800;
-  font-size:14px;
-  letter-spacing:0.12em;
-  color:var(--c-cyan);
-}
-.pv-title{
-  font-weight:700;
-  font-size:15px;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  text-align:center;
-  color:var(--text-primary);
-  flex:1;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  padding:10px 16px;
 }
 .pv-close{
   height:36px;
@@ -473,6 +457,7 @@ a{color:inherit;text-decoration:none}
   letter-spacing:0.06em;
   text-transform:uppercase;
   transition:transform 0.2s;
+  cursor:pointer;
 }
 .pv-close:hover{transform:scale(1.06)}
 
@@ -515,6 +500,7 @@ a{color:inherit;text-decoration:none}
   flex-shrink:0;
   z-index:10;
   transition:transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor:pointer;
 }
 .pv-nav:hover{transform:scale(1.12)}
 .pv-nav svg{width:26px;height:26px}
@@ -544,13 +530,6 @@ a{color:inherit;text-decoration:none}
 .pv-dot.active{
   background:var(--c-cyan);
   transform:scale(1.35);
-}
-.pv-hint{
-  font-size:12px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  font-weight:500;
-  opacity:0.65;
 }
 
 /* ---------- Showreel Modal ---------- */
@@ -826,30 +805,125 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Responsive ---------- */
 @media (max-width:820px){
-  .header-wrap{padding:14px 12px 6px}
-  .gk-nav-centered{gap:12px;padding:8px 18px}
-  .nav-link{font-size:12px;letter-spacing:0.06em}
-  .gk-theme-toggle{width:32px;height:32px}
-  .hero-stage{padding:0 18px 24px}
-  .hero-heading{font-size:clamp(30px, 11.2vw, 76px);margin-top:8px}
-  .hero-portrait-box{width:min(480px, 94vw);max-height:72vh}
-  .hero-portrait-img{max-height:70vh}
-  .hero-bottom-row{flex-direction:column;align-items:center;text-align:center;gap:16px;padding-top:10px}
-  .hero-bio-line{max-width:320px;font-size:12px}
-  .gk-pill-btn{padding:12px 28px;font-size:12px}
-  .film-reel-section{padding:48px 0 60px}
-  .fframe{width:200px;height:136px}
-  .sheet{padding:44px 20px 30px}
-  .sheet .close{right:16px;top:14px}
-  .gk{margin:18px -20px 6px}
-  .gk-tile{width:220px;height:140px;padding:14px;border-radius:10px}
-  .gk-tile b{font-size:24px}
+  .header-wrap{
+    top:10px;
+    padding:0 8px;
+  }
+  .gk-nav-centered{
+    gap:clamp(6px, 1.8vw, 12px);
+    padding:6px 12px;
+    max-width:calc(100vw - 16px);
+  }
+  .nav-link{
+    font-size:clamp(11px, 2.7vw, 13px);
+    letter-spacing:0.04em;
+    padding:3px 2px;
+  }
+  .lbl-full{display:none}
+  .lbl-short{display:inline}
+  .gk-theme-toggle{
+    width:28px;
+    height:28px;
+    margin-left:2px;
+  }
+  .gk-theme-toggle svg{width:14px;height:14px}
+  
+  .hero-stage{
+    padding:0 16px 20px;
+    min-height:calc(100dvh - 58px);
+    justify-content:flex-start;
+  }
+  .hero-ambient-glow{
+    width:min(420px, 92vw);
+    height:min(420px, 92vw);
+    filter:blur(36px);
+  }
+  .hero-heading{
+    font-size:clamp(30px, 10.6vw, 72px);
+    margin-top:6px;
+    letter-spacing:-0.02em;
+    line-height:0.92;
+  }
+  .hero-portrait-box{
+    width:min(420px, 92vw);
+    max-height:64vh;
+  }
+  .hero-portrait-img{
+    max-height:62vh;
+    -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 78%, transparent 98%);
+    mask-image:linear-gradient(180deg, #000 0%, #000 78%, transparent 98%);
+  }
+  .hero-bottom-row{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:12px;
+    margin-top:auto;
+    padding-top:10px;
+    z-index:25;
+    width:100%;
+  }
+  .hero-bio-line{
+    max-width:320px;
+    font-size:11px;
+    letter-spacing:0.06em;
+    line-height:1.4;
+    text-align:center;
+  }
+  .hero-actions{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    width:100%;
+  }
+  .gk-pill-btn{
+    padding:11px 24px;
+    font-size:11.5px;
+  }
+  .film-reel-section{
+    padding:36px 0 46px;
+  }
+  .fframe{
+    width:175px;
+    height:118px;
+  }
+  
+  /* Photo Viewer Mobile Optimization */
+  .photo-viewer{padding:10px}
+  .pv-container{width:100%;max-height:96vh}
+  .pv-header{padding:6px 8px;justify-content:flex-end}
+  .pv-body{position:relative;width:100%;margin:4px 0}
+  .pv-stage{max-width:100%}
+  .pv-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:42px;
+    height:42px;
+    background:rgba(255,255,255,0.88);
+    color:#0b1626;
+    box-shadow:0 8px 24px rgba(0,0,0,0.45);
+    z-index:20;
+  }
+  .pv-prev{left:6px}
+  .pv-next{right:6px}
+  .pv-nav:hover{transform:translateY(-50%) scale(1.08)}
+  .pv-img{
+    max-height:calc(85dvh - 80px);
+    max-width:96vw;
+  }
+  
+  .sheet{padding:42px 18px 26px}
+  .sheet .close{right:14px;top:12px}
+  .gk{margin:16px -18px 6px}
+  .gk-tile{width:200px;height:130px;padding:12px;border-radius:8px}
+  .gk-tile b{font-size:22px}
   .cols,.cast{grid-template-columns:1fr;gap:12px}
-  .cast .photo{max-width:300px;width:100%}
+  .cast .photo{max-width:280px;width:100%}
   .credits li{grid-template-columns:36px 36px 1fr;gap:8px 10px;padding:6px 2px}
   .credits .y{font-size:12px;grid-row:1/span 2;align-self:center}
   .credits .thumb{width:36px;height:50px;grid-row:1/span 2;align-self:center}
-  .credits b{grid-column:3;font-size:19px;line-height:1.1}
+  .credits b{grid-column:3;font-size:18px;line-height:1.1}
   .credits em{grid-column:3;font-size:11px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -863,9 +937,9 @@ a{color:inherit;text-decoration:none}
 <header class="header-wrap anim-fade-down">
   <nav class="gk-nav-centered" aria-label="Primary Navigation">
     <a class="nav-link" href="#hero" data-act="hero">About</a>
-    <button class="nav-link" type="button" data-act="showreel">Showreel</button>
+    <button class="nav-link" type="button" data-act="showreel"><span class="lbl-full">Showreel</span><span class="lbl-short">Reel</span></button>
     <button class="nav-link" type="button" data-act="gallery">Gallery</button>
-    <a class="nav-link" href="#films" data-act="films">Filmography</a>
+    <a class="nav-link" href="#films" data-act="films"><span class="lbl-full">Filmography</span><span class="lbl-short">Films</span></a>
     <a class="nav-link" href="#cast" data-act="cast">Contact</a>
     <button class="gk-theme-toggle" id="theme-btn" type="button" aria-label="Toggle theme">
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -888,6 +962,9 @@ a{color:inherit;text-decoration:none}
 
 <!-- Hero Section (3D Interactive Stage) -->
 <section class="hero-stage" id="hero" aria-label="Vinay Mahadev Hero">
+  <!-- Ambient Backlight Glow behind Actor -->
+  <div class="hero-ambient-glow" aria-hidden="true"></div>
+
   <!-- Massive Single-Line Name Heading (Behind Cutout) -->
   <div class="heading-wrap anim-fade-up" style="animation-delay:0.12s">
     <h1 class="hero-heading">VINAY MAHADEV</h1>
@@ -895,7 +972,7 @@ a{color:inherit;text-decoration:none}
 
   <!-- Resized High-Quality 3D Hero Portrait Cutout -->
   <div class="hero-portrait-box anim-portrait" style="animation-delay:0.28s">
-    <img class="hero-portrait-img" src="assets/img/hero-cut-hd.webp" alt="Vinay Mahadev actor portrait" width="1400" height="1400" fetchpriority="high">
+    <img class="hero-portrait-img" src="assets/img/hero-cut-hd.webp" alt="Vinay Mahadev actor portrait" width="2200" height="2200" fetchpriority="high">
   </div>
 
   <!-- Bottom Row: Bio on Left, Capsule Pill Buttons on Right -->
@@ -913,7 +990,6 @@ a{color:inherit;text-decoration:none}
   <div class="reel-header">
     <p class="eyebrow">// 35mm film reel</p>
     <h2>PRODUCTION STILLS &amp; LOOKS</h2>
-    <p class="reel-sub">Tap any frame to zoom · 12 official stills &amp; character looks</p>
   </div>
 
   <div class="strips">
@@ -926,7 +1002,7 @@ a{color:inherit;text-decoration:none}
   </div>
 
   <div class="reel-footer-cta">
-    <button class="gk-pill-btn" type="button" data-act="gallery">Open Full Gallery (12 Photos) →</button>
+    <button class="gk-pill-btn" type="button" data-act="gallery">Open Full Gallery →</button>
     <button class="gk-pill-btn alt" type="button" data-act="showreel">▶ Watch Showreel</button>
   </div>
 </section>
@@ -935,8 +1011,6 @@ a{color:inherit;text-decoration:none}
 <div class="photo-viewer" id="photo-viewer" hidden role="dialog" aria-modal="true" aria-label="Photo Gallery">
   <div class="pv-container">
     <header class="pv-header">
-      <span class="pv-counter"><b id="pv-num">01</b> / 12</span>
-      <h3 class="pv-title" id="pv-cap">Rugged · Bike Still</h3>
       <button class="pv-close" type="button" aria-label="Close gallery">close ✕</button>
     </header>
 
@@ -956,7 +1030,6 @@ a{color:inherit;text-decoration:none}
 
     <footer class="pv-footer">
       <div class="pv-dots" id="pv-dots"></div>
-      <p class="pv-hint">Swipe left/right or use arrow keys · Tap outside to close</p>
     </footer>
   </div>
 </div>
@@ -1096,67 +1169,113 @@ if (themeBtn) {
   });
 }
 
-/* ---------- 3D Drag & Parallax Engine (GK Style) ---------- */
+/* ---------- 3D Drag, Parallax & Scroll Engine (GK Style) ---------- */
 const heroStage = $('#hero');
 const portraitBox = $('.hero-portrait-box');
 const heading = $('.hero-heading');
+const ambientGlow = $('.hero-ambient-glow');
+const heroBottom = $('.hero-bottom-row');
 
 let targetRotX = 0, targetRotY = 0, targetPosX = 0, targetPosY = 0;
 let targetHeadX = 0, targetHeadY = 0;
 let curRotX = 0, curRotY = 0, curPosX = 0, curPosY = 0;
 let curHeadX = 0, curHeadY = 0, curScrollY = 0;
-let isInteracting = false;
+let isDragging = false, dragPointerId = null;
+let dragStartX = 0, dragStartY = 0;
+let dragBasePosX = 0, dragBasePosY = 0, dragBaseRotX = 0, dragBaseRotY = 0;
 
-function update3DPose(clientX, clientY) {
-  if (!heroStage || RM) return;
+function onPointerMoveTracking(clientX, clientY) {
+  if (!heroStage || RM || isDragging) return;
   const rect = heroStage.getBoundingClientRect();
   const centerX = rect.left + rect.width / 2;
   const centerY = rect.top + rect.height / 2;
   const dx = clientX - centerX;
   const dy = clientY - centerY;
 
-  // 3D tilt & translation for the portrait
-  targetRotY = (dx / (rect.width / 2)) * 10;
-  targetRotX = -(dy / (rect.height / 2)) * 8;
-  targetPosX = (dx / (rect.width / 2)) * 26;
-  targetPosY = (dy / (rect.height / 2)) * 16;
+  const halfW = Math.max(rect.width / 2, 180);
+  const halfH = Math.max(rect.height / 2, 180);
+  const normX = Math.max(-1.4, Math.min(1.4, dx / halfW));
+  const normY = Math.max(-1.4, Math.min(1.4, dy / halfH));
 
-  // Counter parallax for heading behind
-  targetHeadX = -(dx / (rect.width / 2)) * 16;
-  targetHeadY = -(dy / (rect.height / 2)) * 10;
+  targetPosX = normX * 52;
+  targetPosY = normY * 34;
+  targetRotY = normX * 14;
+  targetRotX = -normY * 11;
+
+  targetHeadX = -normX * 22;
+  targetHeadY = -normY * 12;
 }
 
-if (heroStage && !RM) {
-  window.addEventListener('mousemove', e => {
-    isInteracting = true;
-    update3DPose(e.clientX, e.clientY);
-  });
+function startHeroDrag(e) {
+  if (RM || (e.button && e.button !== 0)) return;
+  if (e.target.closest('button, a')) return;
+  isDragging = true;
+  dragPointerId = e.pointerId;
+  dragStartX = e.clientX;
+  dragStartY = e.clientY;
+  dragBasePosX = curPosX;
+  dragBasePosY = curPosY;
+  dragBaseRotX = curRotX;
+  dragBaseRotY = curRotY;
+  if (portraitBox) {
+    portraitBox.style.cursor = 'grabbing';
+    try { portraitBox.setPointerCapture(e.pointerId); } catch (_) {}
+  }
+}
 
-  // Touch move / drag support for mobile
-  heroStage.addEventListener('touchmove', e => {
-    if (e.touches.length > 0) {
-      isInteracting = true;
-      update3DPose(e.touches[0].clientX, e.touches[0].clientY);
+function moveHeroDrag(e) {
+  if (!isDragging) {
+    onPointerMoveTracking(e.clientX, e.clientY);
+    return;
+  }
+  const dx = e.clientX - dragStartX;
+  const dy = e.clientY - dragStartY;
+  targetPosX = dragBasePosX + dx * 0.85;
+  targetPosY = dragBasePosY + dy * 0.75;
+  targetRotY = dragBaseRotY + (dx / 9);
+  targetRotX = dragBaseRotX - (dy / 11);
+  targetHeadX = -targetPosX * 0.45;
+  targetHeadY = -targetPosY * 0.45;
+}
+
+function endHeroDrag(e) {
+  if (!isDragging) return;
+  isDragging = false;
+  if (portraitBox) {
+    portraitBox.style.cursor = 'grab';
+    if (dragPointerId !== null) {
+      try { portraitBox.releasePointerCapture(dragPointerId); } catch (_) {}
     }
-  }, { passive: true });
+  }
+  dragPointerId = null;
+  targetRotX = 0; targetRotY = 0;
+  targetPosX = 0; targetPosY = 0;
+  targetHeadX = 0; targetHeadY = 0;
+}
 
-  heroStage.addEventListener('touchend', () => {
-    isInteracting = false;
-    targetRotX = 0; targetRotY = 0; targetPosX = 0; targetPosY = 0;
-    targetHeadX = 0; targetHeadY = 0;
-  });
+if (!RM) {
+  if (portraitBox) portraitBox.addEventListener('pointerdown', startHeroDrag);
+  if (heroStage) {
+    heroStage.addEventListener('pointerdown', e => {
+      if (!isDragging && !e.target.closest('button, a')) startHeroDrag(e);
+    });
+  }
+  window.addEventListener('pointermove', moveHeroDrag);
+  window.addEventListener('pointerup', endHeroDrag);
+  window.addEventListener('pointercancel', endHeroDrag);
 
   window.addEventListener('mouseleave', () => {
-    isInteracting = false;
-    targetRotX = 0; targetRotY = 0; targetPosX = 0; targetPosY = 0;
-    targetHeadX = 0; targetHeadY = 0;
+    if (!isDragging) {
+      targetRotX = 0; targetRotY = 0; targetPosX = 0; targetPosY = 0;
+      targetHeadX = 0; targetHeadY = 0;
+    }
   });
 }
 
-// Unified Render Loop with inertia dampening & scroll tracking
+// Unified Render Loop: Inertia Damping + Dynamic 3D Scroll Physics
 function loop3D() {
   if (!RM) {
-    const ease = isInteracting ? 0.08 : 0.05;
+    const ease = isDragging ? 0.22 : 0.075;
     curRotX += (targetRotX - curRotX) * ease;
     curRotY += (targetRotY - curRotY) * ease;
     curPosX += (targetPosX - curPosX) * ease;
@@ -1165,18 +1284,39 @@ function loop3D() {
     curHeadY += (targetHeadY - curHeadY) * ease;
 
     const sy = window.scrollY || window.pageYOffset || 0;
-    curScrollY += (sy - curScrollY) * 0.1;
+    curScrollY += (sy - curScrollY) * 0.12;
+
+    const vh = window.innerHeight || 800;
+    const scrollRatio = Math.min(Math.max(curScrollY / vh, 0), 1.2);
 
     if (portraitBox) {
-      // 3D parallax displacement + perspective tilt + scroll glide
-      const scrollShift = curScrollY * 0.32;
-      portraitBox.style.transform = `translateX(calc(-50% + ${curPosX.toFixed(2)}px)) translateY(${(curPosY + scrollShift).toFixed(2)}px) rotateY(${curRotY.toFixed(2)}deg) rotateX(${curRotX.toFixed(2)}deg)`;
+      // 3D parallax displacement + perspective tilt + scroll glide & scale
+      const scrollShiftY = curScrollY * 0.38;
+      const scrollScale = Math.max(1 - scrollRatio * 0.12, 0.85);
+      const scrollTiltX = -scrollRatio * 8;
+      portraitBox.style.transform = `translateX(calc(-50% + ${curPosX.toFixed(2)}px)) translateY(${(curPosY + scrollShiftY).toFixed(2)}px) scale(${scrollScale.toFixed(3)}) rotateY(${curRotY.toFixed(2)}deg) rotateX(${(curRotX + scrollTiltX).toFixed(2)}deg)`;
     }
 
     if (heading) {
-      // Subtle counter-parallax for deep stereoscopic 3D
-      const headScroll = -curScrollY * 0.14;
-      heading.style.transform = `translate3d(${curHeadX.toFixed(2)}px, ${(curHeadY + headScroll).toFixed(2)}px, 0)`;
+      // Deep counter-parallax for stereoscopic 3D
+      const headScrollY = -curScrollY * 0.18;
+      const headScale = 1 + scrollRatio * 0.06;
+      heading.style.transform = `translate3d(${curHeadX.toFixed(2)}px, ${(curHeadY + headScrollY).toFixed(2)}px, 0) scale(${headScale.toFixed(3)})`;
+    }
+
+    if (ambientGlow) {
+      const glowX = curPosX * 0.6;
+      const glowY = curPosY * 0.6 + curScrollY * 0.28;
+      ambientGlow.style.transform = `translate(calc(-50% + ${glowX.toFixed(2)}px), calc(-50% + ${glowY.toFixed(2)}px))`;
+    }
+
+    if (heroBottom) {
+      // Smooth fade and glide when scrolling towards 35mm film reel
+      const bottomOpacity = Math.max(1 - scrollRatio * 1.6, 0);
+      const bottomShiftY = curScrollY * 0.2;
+      heroBottom.style.opacity = bottomOpacity.toFixed(3);
+      heroBottom.style.transform = `translateY(${bottomShiftY.toFixed(2)}px)`;
+      heroBottom.style.pointerEvents = bottomOpacity < 0.2 ? 'none' : 'auto';
     }
   }
   requestAnimationFrame(loop3D);
@@ -1203,8 +1343,6 @@ const GALLERY = [
 /* ---------- Big Photo Viewer (Direct with Swipe, Left & Right buttons) ---------- */
 const pv = $('#photo-viewer');
 const pvImg = $('#pv-img');
-const pvNum = $('#pv-num');
-const pvCap = $('#pv-cap');
 const pvDots = $('#pv-dots');
 let pvIndex = 0;
 
@@ -1219,10 +1357,10 @@ if (pvDots) {
 function setPhotoViewer(i) {
   pvIndex = (i + GALLERY.length) % GALLERY.length;
   const item = GALLERY[pvIndex];
-  pvImg.src = item.src;
-  pvImg.alt = 'Vinay Mahadev — ' + item.cap;
-  pvNum.textContent = String(pvIndex + 1).padStart(2, '0');
-  pvCap.textContent = item.cap;
+  if (pvImg) {
+    pvImg.src = item.src;
+    pvImg.alt = 'Vinay Mahadev production still';
+  }
   $$('.pv-dot').forEach((dot, idx) => dot.classList.toggle('active', idx === pvIndex));
 }
 
@@ -1295,11 +1433,8 @@ const track2 = $('#reel-track-2');
 function buildReelFrames(list) {
   return list.map((g, i) => {
     const realIdx = GALLERY.indexOf(g);
-    const num = String(realIdx + 1).padStart(2, '0');
     return `<div class="fframe" data-g="${realIdx}">
-      <span class="fbadge">▶ ${num}</span>
-      <img src="${g.src}" alt="Vinay Mahadev ${esc(g.cap)}" loading="lazy">
-      <span class="fcaption">${esc(g.cap)}</span>
+      <img src="${g.src}" alt="Vinay Mahadev production still" loading="lazy">
     </div>`;
   }).join('');
 }
