@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vinay Mahadev — Actor Portfolio</title>
+<meta name="description" content="Vinay Mahadev — actor based in Hyderabad. Telugu, Hindi and English. Saripodhaa Sanivaaram, Ambajipeta Marriage Band, Dear Comrade, Mowgli, Champion. Nandi Award winner for theatre.">
+<meta property="og:title" content="Vinay Mahadev — Actor">
+<meta property="og:description" content="Actor · Hyderabad · Telugu, Hindi & English. Showreel, filmography and casting contact.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="assets/img/hero.jpg">
+<meta name="theme-color" content="#01050c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030c1b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%233d9bff' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&family=Caveat+Brush&family=Anton&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero.webp">
+<link rel="preload" as="image" href="assets/img/hero-cut.webp">
+<style>
+:root{
+  --navy-950:#01050c; --navy-900:#030c1b; --navy-800:#0a1f3a; --navy-700:#123561;
+  --blue:#4aa3ff; --ice:#d4e8ff; --ink:#0d0f12; --rec:#ff3b3b;
+  --n:1px; --glide:1.5s; --th:180px; --mbs:.2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--navy-950);color:#fff;
+  font-family:'Inter Tight',system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased;overscroll-behavior:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* ---------- stage ---------- */
+.stage{position:fixed;inset:0;overflow:hidden;touch-action:none;
+  background:radial-gradient(120% 95% at 50% 40%,#071a33 0%,#030c1b 46%,#01050c 100%)}
+.stage::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity 1.5s cubic-bezier(.65,0,.35,1);
+  background:linear-gradient(180deg,#020a17 0%,#06193a 46%,#1b4c8c 80%,#79a8dd 100%)}
+.stage.m-case::before{opacity:1}
+.stage::after{content:"";position:absolute;left:50%;top:44%;width:80vmax;height:80vmax;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(61,140,255,.16) 0%,rgba(61,140,255,0) 60%);pointer-events:none}
+
+/* ---------- scene frame (1440 x 810 units) ---------- */
+.frame{position:absolute;left:0;top:0;width:1440px;height:810px;transform-origin:0 0;
+  perspective:2200px;perspective-origin:720px 410px;z-index:1}
+.frame.glide{transition:transform var(--glide) cubic-bezier(.65,0,.35,1)}
+.plate,.cut{position:absolute;left:270px;top:130px;width:900px;height:900px;transform-origin:50% 32%;
+  user-select:none;-webkit-user-drag:none;pointer-events:none}
+.plate{
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 160px),linear-gradient(90deg,transparent 0,#000 180px,#000 720px,transparent 900px);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent 0,#000 160px),linear-gradient(90deg,transparent 0,#000 180px,#000 720px,transparent 900px);
+  mask-composite:intersect}
+.cut{z-index:4;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 180px,#000 720px,transparent 900px);
+  mask-image:linear-gradient(90deg,transparent 0,#000 180px,#000 720px,transparent 900px)}
+
+.wm{position:absolute;left:0;top:0;width:1440px;height:260px;overflow:visible;z-index:3;pointer-events:none}
+.wm text,.mwm text{font-family:'Inter Tight',sans-serif;font-weight:900;font-size:268px;letter-spacing:-6px}
+
+.script{position:absolute;top:142px;left:120px;z-index:7;pointer-events:none;white-space:nowrap;
+  font:400 120px/1 'Caveat Brush',cursive;letter-spacing:-.5px;color:var(--blue);
+  transform:rotate(-8deg);transform-origin:0 50%;text-shadow:0 2px 16px rgba(0,8,24,.55)}
+
+/* ---------- lanyard badge ---------- */
+.badge{position:absolute;left:986px;top:-165px;width:582px;height:1030px;transform-origin:288px 0;
+  pointer-events:none;z-index:6;filter:drop-shadow(0 18px 26px rgba(0,0,0,.45))}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.badge .card{position:absolute;left:172px;top:536px;width:238px;height:392px;padding:20px 16px 0;
+  background:#f4f6f5;color:#141615;border-radius:6px;font-family:'Inter Tight',sans-serif}
+.card h4{font-size:30px;line-height:.95;font-weight:800;letter-spacing:-.5px}
+.card .yr{position:absolute;right:16px;top:62px;font-size:11px;font-weight:700}
+.card .role{margin-top:12px;padding-top:5px;border-top:1px solid #222;font-size:9.5px;font-weight:700;letter-spacing:.2px}
+.card .ph{width:92px;height:112px;margin:12px auto;border-radius:6px;
+  background:#dfe4e1 url(assets/img/hero-cut.webp) no-repeat;background-size:167px 167px;background-position:-38px 0;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.card .row{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;font-size:9px;font-weight:700;
+  padding:6px 0 3px;border-bottom:1.5px dotted #333;white-space:nowrap}
+.card .row b{font-weight:600}
+.badge .sleeve{position:absolute;left:150px;top:500px;width:282px;height:450px;border-radius:16px;
+  border:2px solid rgba(255,255,255,.55);
+  background:linear-gradient(115deg,rgba(255,255,255,.26) 0%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 72%,rgba(255,255,255,.12) 100%)}
+.badge .sleeve::before{content:"";position:absolute;left:103px;top:12px;width:72px;height:11px;border-radius:6px;background:rgba(0,0,0,.35)}
+.badge .hit{position:absolute;left:160px;top:470px;width:262px;height:440px;pointer-events:auto;cursor:grab}
+
+/* ---------- 3D cinema camera ---------- */
+.cam{position:absolute;left:240px;top:90px;width:960px;height:640px;z-index:5;
+  transform-style:preserve-3d;transform-origin:480px 320px -120px;cursor:pointer}
+.js .cam:not(.in){visibility:hidden}
+.cam-bob,.box{position:absolute;inset:0;transform-style:preserve-3d}
+.box{transform:translateZ(-120px)}
+.face{position:absolute;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.face svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.f-back,.f-front{left:0;top:0;width:960px;height:640px}
+.f-back{transform:translateZ(120px)}
+.f-front{transform:rotateY(180deg) translateZ(120px)}
+.f-side{left:360px;top:64px;width:240px;height:576px;
+  background:linear-gradient(90deg,#090a0d 0%,#1d2229 45%,#2a3039 55%,#0b0d10 100%)}
+.f-side::before{content:"";position:absolute;left:30px;right:30px;top:120px;height:150px;border-radius:10px;
+  background:repeating-linear-gradient(180deg,#07080a 0 6px,transparent 6px 16px)}
+.f-side::after{content:"";position:absolute;left:60px;top:340px;width:120px;height:60px;border-radius:8px;background:#0c0e11;
+  box-shadow:inset 0 0 0 2px #2c323b}
+.f-right{transform:rotateY(90deg) translateZ(480px)}
+.f-left{transform:rotateY(-90deg) translateZ(480px)}
+.f-top{left:24px;top:-56px;width:912px;height:240px;transform:rotateX(90deg);
+  background:linear-gradient(180deg,#2c323b,#15181d);border-radius:20px}
+.lens{position:absolute;border-radius:50%;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.l1{left:340px;top:150px;width:400px;height:400px;transform:rotateY(180deg) translateZ(150px);
+  background:radial-gradient(circle,#0b0d10 0 58%,#1d2127 59%,#3a414b 63%,#1b1f25 64%,#2c323b 84%,#101215 100%)}
+.l2{left:355px;top:165px;width:370px;height:370px;transform:rotateY(180deg) translateZ(196px);
+  -webkit-mask:radial-gradient(circle,transparent 0 73%,#000 73.5%);mask:radial-gradient(circle,transparent 0 73%,#000 73.5%);
+  background:repeating-conic-gradient(#17191e 0 2.4deg,#353c46 2.4deg 4.8deg)}
+.l3{left:395px;top:205px;width:290px;height:290px;transform:rotateY(180deg) translateZ(236px);
+  background:radial-gradient(circle at 38% 34%,rgba(255,255,255,.85) 0 2.6%,transparent 3.2%),
+    radial-gradient(circle at 62% 66%,rgba(185,120,255,.35) 0 6%,transparent 14%),
+    radial-gradient(circle at 44% 42%,#4f86e0 0%,#16346a 30%,#060d1c 62%,#000 100%);
+  box-shadow:inset 0 0 0 12px #121418,inset 0 0 0 15px #59626e,inset 0 0 40px 18px rgba(0,0,0,.6)}
+.l3::after{content:"";position:absolute;inset:34px;border-radius:50%;border-top:7px solid rgba(255,255,255,.4);transform:rotate(-38deg)}
+
+.screen{position:absolute;left:40px;top:106px;width:760px;height:480px;border-radius:6px;background:#000;overflow:hidden}
+.screen::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:4;
+  background:linear-gradient(115deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 38%)}
+.standby{position:absolute;inset:0;display:grid;place-items:center;font:700 15px/1 'Inter Tight';letter-spacing:.4em;color:rgba(255,255,255,.18)}
+.feed{position:absolute;inset:0;opacity:0;transition:opacity .3s;z-index:2;background:#000}
+.is-case .feed{opacity:1}
+.shots,.shot{position:absolute;inset:0}
+.shot .bg{position:absolute;left:-40px;top:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;
+  filter:blur(22px) brightness(.38) saturate(1.2)}
+.shot .fg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:5;pointer-events:none}
+.vf{position:absolute;inset:0;z-index:3;pointer-events:none;font:600 13px/1 'Inter Tight',sans-serif;letter-spacing:.1em;
+  color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.vf .br{position:absolute;width:34px;height:34px;border:2px solid rgba(255,255,255,.85)}
+.vf .b1{left:18px;top:18px;border-right:0;border-bottom:0}.vf .b2{right:18px;top:18px;border-left:0;border-bottom:0}
+.vf .b3{left:18px;bottom:18px;border-right:0;border-top:0}.vf .b4{right:18px;bottom:18px;border-left:0;border-top:0}
+.vf .safe{position:absolute;inset:10%;border:1px dashed rgba(255,255,255,.16)}
+.vf .x{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;
+  background:linear-gradient(#fff,#fff) center/100% 1.5px no-repeat,linear-gradient(#fff,#fff) center/1.5px 100% no-repeat;opacity:.55}
+.vf .rec{position:absolute;left:64px;top:30px;display:flex;align-items:center;gap:8px}
+.vf .rec i{width:11px;height:11px;border-radius:50%;background:var(--rec);box-shadow:0 0 10px var(--rec);animation:blink 1s steps(2,jump-none) infinite}
+.vf .tc{position:absolute;right:64px;top:30px;font-variant-numeric:tabular-nums}
+.vf .meta{position:absolute;left:64px;bottom:30px;opacity:.9}
+.vf .sc{position:absolute;right:64px;bottom:30px;opacity:.9}
+.vf .bat{position:absolute;left:50%;top:30px;transform:translateX(-50%);opacity:.9}
+@keyframes blink{50%{opacity:.15}}
+
+/* ---------- viewport UI ---------- */
+.ui{position:fixed;inset:0;z-index:20;pointer-events:none;touch-action:none}
+.tag{position:absolute;top:calc(7*var(--n));height:calc(37*var(--n));padding:0 calc(18*var(--n));display:flex;align-items:center;
+  background:#fff;color:var(--ink);font-weight:650;font-size:calc(16.5*var(--n));letter-spacing:-.02em;white-space:nowrap;
+  text-decoration:none;pointer-events:auto;
+  box-shadow:0 calc(3*var(--n)) 0 rgba(0,0,0,.18),0 calc(6*var(--n)) calc(14*var(--n)) rgba(0,0,0,.18);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s cubic-bezier(.2,.8,.2,1)}
+.tag:hover{transform:translateY(calc(-2*var(--n))) rotate(-1.5deg);
+  box-shadow:0 calc(5*var(--n)) 0 rgba(0,0,0,.22),0 calc(10*var(--n)) calc(18*var(--n)) rgba(0,0,0,.2)}
+.tag:active{transform:translateY(var(--n));box-shadow:0 var(--n) 0 rgba(0,0,0,.22)}
+.t1{left:calc(30*var(--n))}.t2{left:calc(233*var(--n))}.t3{right:calc(244*var(--n))}.t4{right:calc(32*var(--n))}
+.js .pre{opacity:0}
+
+.logo{position:absolute;left:50%;top:calc(14*var(--n));transform:translateX(-50%);font-weight:600;font-size:calc(19*var(--n));
+  letter-spacing:.14em;white-space:nowrap;opacity:0;transition:opacity .4s;pointer-events:none}
+.is-case .logo{opacity:1;pointer-events:auto}
+
+.hint{position:absolute;left:50%;bottom:calc(22*var(--n));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;
+  gap:calc(10*var(--n));font-size:calc(12*var(--n));letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.85;white-space:nowrap}
+.hint .line{position:relative;width:1.5px;height:calc(22*var(--n));background:rgba(255,255,255,.35);overflow:hidden}
+.hint .line b{position:absolute;left:0;top:-40%;width:100%;height:40%;background:#fff;animation:drip 1.6s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes drip{to{top:100%}}
+.is-case .hint,.busy .hint{visibility:hidden}
+
+.lb{position:fixed;left:0;right:0;height:0;background:#000;z-index:15;pointer-events:none}
+.lb.top{top:0}.lb.bot{bottom:0}
+
+/* ticket */
+.ticket{position:absolute;right:calc(32*var(--n));top:calc(98*var(--n));width:calc(348*var(--n));height:calc(182*var(--n));
+  background:#fff;color:var(--ink);border-radius:calc(3*var(--n));box-shadow:0 calc(18*var(--n)) calc(40*var(--n)) rgba(0,0,0,.28);
+  padding:calc(26*var(--n)) calc(34*var(--n)) 0 calc(44*var(--n));transform-origin:50% 0;opacity:0}
+.ticket.link{pointer-events:auto;cursor:pointer}
+.hole{position:absolute;width:calc(21*var(--n));height:calc(21*var(--n));border-radius:50%;background:var(--navy-800);
+  box-shadow:inset 0 calc(2*var(--n)) calc(3*var(--n)) rgba(0,0,0,.35)}
+.h1{left:calc(12*var(--n));top:calc(12*var(--n))}.h2{right:calc(12*var(--n));top:calc(12*var(--n))}
+.h3{left:calc(12*var(--n));bottom:calc(12*var(--n))}.h4{right:calc(12*var(--n));bottom:calc(12*var(--n))}
+.ticket h2{font:400 calc(50*var(--n))/1 'Anton',Impact,sans-serif;letter-spacing:-.01em;white-space:nowrap;overflow:hidden}
+.ticket .rows{margin-top:calc(8*var(--n))}
+.ticket .rows div{text-align:right;font-weight:700;font-size:calc(12*var(--n));letter-spacing:.02em;
+  padding:calc(4*var(--n)) 0 calc(3*var(--n));border-bottom:1.5px dotted #2a2a2a;white-space:nowrap}
+
+.desc{position:absolute;left:calc(28*var(--n));top:calc(326*var(--n));width:calc(172*var(--n))}
+.desc>*{opacity:0}
+.desc .k{font-weight:700;font-size:calc(17*var(--n));letter-spacing:-.02em}
+.desc p{margin-top:calc(14*var(--n));font-size:calc(15*var(--n));line-height:1.36;font-weight:500;color:rgba(255,255,255,.92)}
+.desc .cta{display:inline-block;margin-top:calc(14*var(--n));font-weight:700;font-size:calc(13*var(--n));letter-spacing:.06em;
+  text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:1.5px solid var(--blue);padding-bottom:2px;pointer-events:auto}
+.desc .cta[hidden]{display:none}
+.desc .num{margin-top:calc(22*var(--n));font-size:calc(12*var(--n));letter-spacing:.16em;font-weight:700;color:rgba(255,255,255,.7)}
+.is-case .ticket,.is-case .desc>*{opacity:1}
+
+.nav-case{position:absolute;bottom:calc(150*var(--n));display:flex;flex-direction:column;align-items:center;gap:calc(9*var(--n));
+  opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;pointer-events:auto;
+  font-weight:600;font-size:calc(15*var(--n));line-height:1.05;text-align:center}
+.is-case .nav-case{opacity:1;visibility:visible}
+.is-case .nav-case.dim{opacity:.45}
+.prev{left:calc(95*var(--n))}.next{right:calc(95*var(--n))}
+.nav-case .c{width:calc(50*var(--n));height:calc(50*var(--n));border-radius:50%;border:1.6px solid rgba(255,255,255,.9);
+  display:grid;place-items:center;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s}
+.nav-case svg{width:calc(24*var(--n));height:calc(24*var(--n))}
+.next .c{background:#fff;color:var(--navy-800)}
+.next:hover .c{background:var(--ice)}
+.nav-case:hover .c{transform:scale(1.08)}
+
+.m-only{display:none}
+.frame.m-case .wm,.frame.m-case .script,.frame.m-case .badge,.is-case .mwm,.is-case .mscript,.is-case .m-badge{visibility:hidden}
+
+/* film grain */
+.grain{position:fixed;inset:-100%;z-index:30;pointer-events:none;opacity:.065;animation:grain 1s steps(6) infinite;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+@keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,5%)}80%{transform:translate(6%,2%)}}
+
+/* ---------- sheets (filmography / cast) ---------- */
+.sheet-wrap{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:24px;
+  background:rgba(1,5,12,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sheet-wrap[hidden]{display:none}
+.sheet{position:relative;width:min(1000px,100%);max-height:calc(100dvh - 48px);overflow:auto;overscroll-behavior:contain;touch-action:pan-y;
+  background:#f6f7f5;color:var(--ink);border-radius:4px;padding:48px 56px 44px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.sheet .hole{width:18px;height:18px}
+.sheet .h1{left:14px;top:14px}.sheet .h2{right:14px;top:14px}
+.sheet .close{position:absolute;right:44px;top:22px;height:34px;padding:0 14px;background:var(--ink);color:#fff;font-weight:650;font-size:14px;
+  box-shadow:0 3px 0 rgba(0,0,0,.2);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.sheet .close:hover{transform:translateY(-2px) rotate(-1.5deg)}
+.eyebrow{font-weight:700;font-size:15px;letter-spacing:-.01em;color:#4b5563}
+.sheet h2{font:400 clamp(44px,7vw,84px)/.95 'Anton',Impact,sans-serif;letter-spacing:-.01em;margin-top:6px}
+.sheet h3{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:30px 0 8px}
+.strip{margin:22px -56px 0;padding:16px 56px;background:#0b0d10;position:relative;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:8px;
+  background:repeating-linear-gradient(90deg,transparent 0 10px,#f6f7f5 10px 20px,transparent 20px 30px);opacity:.85}
+.strip::before{top:4px}.strip::after{bottom:4px}
+.strip img{height:120px;width:auto;flex:none;border-radius:2px;filter:saturate(.95)}
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:48px}
+.credits{list-style:none}
+.credits li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:baseline;padding:9px 0 7px;border-bottom:1.5px dotted #2a2a2a}
+.credits .y{font-weight:700;font-size:13px;color:#4b5563;font-variant-numeric:tabular-nums}
+.credits b{font:400 22px/1.05 'Anton',Impact,sans-serif;letter-spacing:.01em}
+.credits em{font-style:normal;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{background:var(--ink);color:#fff;font-weight:650;font-size:14px;padding:7px 12px;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.plain{list-style:none}
+.plain li{padding:8px 0 6px;border-bottom:1.5px dotted #2a2a2a;font-weight:500;font-size:15px}
+.plain li b{font-weight:800}
+.cast{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:44px;align-items:start;margin-top:8px}
+.cast .photo{aspect-ratio:3/4;background:#dfe4e1 center/cover no-repeat;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.stats{margin-top:16px}
+.stats div{display:flex;justify-content:space-between;gap:16px;padding:8px 0 6px;border-bottom:1.5px dotted #2a2a2a;font-size:14px}
+.stats dt{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.stats dd{font-weight:600;text-align:right}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.links a{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px;background:var(--ink);color:#fff;text-decoration:none;
+  font-weight:650;font-size:15px;box-shadow:0 3px 0 rgba(0,0,0,.2),0 6px 14px rgba(0,0,0,.15);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.links a:hover{transform:translateY(-2px) rotate(-1.5deg)}
+.links a.alt{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink),0 3px 0 rgba(0,0,0,.2)}
+.sheet .foot{margin-top:28px;font-size:12px;color:#6b7280;letter-spacing:.04em}
+
+/* ---------- phones & tablets ---------- */
+@media (max-width:820px){
+  :root{--n:calc(100vw/430)}
+  .frame .wm,.frame .script,.frame .badge{display:none}
+  .m-only{display:block}
+  .stage{background:#020b18}
+  .stage::before{background:linear-gradient(180deg,#020a17 0%,#06193a 55%,#14427a 80%,#5f92cc 100%)}
+  .plate{
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 220px),linear-gradient(90deg,transparent 0,#000 160px,#000 740px,transparent 900px);
+    mask-image:linear-gradient(180deg,transparent 0,#000 220px),linear-gradient(90deg,transparent 0,#000 160px,#000 740px,transparent 900px)}
+  .tag{top:12px;height:30px;font-size:13px;padding:0 12px}
+  .t1{left:12px}.t2{left:auto;right:12px}.t3{left:12px;right:auto;top:calc(12px + 44*var(--n))}.t4{right:12px;top:calc(12px + 44*var(--n))}
+  .is-case .t3,.is-case .t4{visibility:hidden}
+  .logo{display:none}
+  .mwm{position:absolute;left:3vw;width:94vw;top:calc(12px + 96*var(--n));height:calc(94vw*240/1440);overflow:visible}
+  .mscript{position:absolute;left:5vw;top:calc(12px + 96*var(--n) + 13vw);font:400 15vw/1 'Caveat Brush',cursive;color:var(--blue);
+    transform:rotate(-7deg);transform-origin:0 50%;text-shadow:0 2px 10px rgba(0,8,24,.5);white-space:nowrap}
+  .m-badge{position:absolute;right:2vw;top:calc(12px + 96*var(--n) + 9vw);width:27vw;height:calc(27vw*1030/582);z-index:-1}
+  .m-badge .badge{left:0;top:0;scale:var(--mbs);translate:calc(-288px + 13.5vw) 0;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}
+  .ticket{left:50%;right:auto;top:62px;width:min(86vw,360px);margin-left:calc(min(86vw,360px)/-2);height:auto;border-radius:3px;
+    padding:22px 26px 16px 36px;box-shadow:0 14px 30px rgba(0,0,0,.3)}
+  .ticket h2{font-size:38px}
+  .ticket .rows{margin-top:6px}
+  .ticket .rows div{font-size:11px;padding:4px 0 3px}
+  .ticket .hole{width:15px;height:15px}
+  .ticket .h1,.ticket .h3{left:10px}.ticket .h2,.ticket .h4{right:10px}
+  .ticket .h1,.ticket .h2{top:10px}.ticket .h3,.ticket .h4{bottom:10px}
+  .desc{left:50%;width:min(86vw,360px);margin-left:calc(min(86vw,360px)/-2);top:calc(62px + var(--th) + 18px);text-align:center}
+  .desc .k{font-size:15px}
+  .desc p{margin-top:6px;font-size:13.5px}
+  .desc .cta{margin-top:8px;font-size:12px}
+  .desc .num{display:none}
+  .nav-case{bottom:calc(env(safe-area-inset-bottom) + 2.2vh);flex-direction:row;gap:10px;font-size:12.5px}
+  .nav-case br{display:none}
+  .prev{left:6vw}.next{right:6vw;flex-direction:row-reverse}
+  .nav-case .c{width:42px;height:42px}
+  .nav-case svg{width:20px;height:20px}
+  .hint{bottom:18px;font-size:11px}
+  .sheet{padding:44px 22px 30px}
+  .sheet .close{right:16px;top:14px}
+  .strip{margin:18px -22px 0;padding:16px 22px}
+  .strip img{height:92px}
+  .cols,.cast{grid-template-columns:1fr;gap:8px}
+  .cast .photo{max-width:300px;width:100%}
+  .credits li{grid-template-columns:44px 1fr;row-gap:2px}
+  .credits em{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<main class="stage" aria-label="Vinay Mahadev — actor">
+  <div class="frame" aria-hidden="false">
+    <img class="plate" src="assets/img/hero.webp" alt="Vinay Mahadev, portrait in a navy shirt under blue rim light" width="900" height="900" decoding="async" fetchpriority="high">
+
+    <svg class="wm pre" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="wmg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+        <stop offset=".5" stop-color="#eef4fb" stop-opacity=".9"/>
+        <stop offset="1" stop-color="#a9c8ee" stop-opacity=".26"/>
+      </linearGradient></defs>
+      <text x="14" y="214" textLength="1412" lengthAdjust="spacingAndGlyphs" fill="url(#wmg)">MAHADEV</text>
+    </svg>
+
+    <img class="cut" src="assets/img/hero-cut.webp" alt="" width="900" height="900" decoding="async">
+
+    <!-- cinema camera: front (lens) in the hero, back (monitor) in the reel -->
+    <div class="cam" role="button" tabindex="-1" aria-label="Open the reel">
+      <div class="cam-bob"><div class="box">
+        <div class="face f-side f-right"></div>
+        <div class="face f-side f-left"></div>
+        <div class="face f-top"></div>
+
+        <div class="face f-front">
+          <svg viewBox="0 0 960 640" aria-hidden="true">
+            <defs>
+              <linearGradient id="bodyF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c323b"/><stop offset=".5" stop-color="#171a1f"/><stop offset="1" stop-color="#0a0b0e"/></linearGradient>
+              <linearGradient id="rimF" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5aaaff" stop-opacity=".55"/><stop offset=".18" stop-color="#5aaaff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1f5"/><stop offset=".45" stop-color="#8c95a1"/><stop offset=".55" stop-color="#f3f5f8"/><stop offset="1" stop-color="#5f6874"/></linearGradient>
+              <radialGradient id="glassF" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#4f86e0"/><stop offset=".35" stop-color="#16346a"/><stop offset=".7" stop-color="#060d1c"/><stop offset="1" stop-color="#000"/></radialGradient>
+              <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="2.2" fill="#1d2127"/></pattern>
+            </defs>
+            <rect x="300" y="8" width="400" height="30" rx="15" fill="url(#bodyF)"/>
+            <rect x="330" y="30" width="34" height="40" fill="#121418"/><rect x="636" y="30" width="34" height="40" fill="#121418"/>
+            <rect x="96" y="34" width="130" height="36" rx="9" fill="#1b1f25"/><rect x="104" y="42" width="114" height="20" rx="6" fill="url(#dots)"/>
+            <rect x="0" y="64" width="960" height="576" rx="36" fill="url(#bodyF)"/>
+            <rect x="0" y="64" width="960" height="576" rx="36" fill="url(#rimF)"/>
+            <rect x="1.5" y="65.5" width="957" height="573" rx="35" fill="none" stroke="rgba(140,190,255,.32)" stroke-width="3"/>
+            <rect x="742" y="92" width="190" height="520" rx="28" fill="#0d0f12"/><rect x="756" y="150" width="162" height="420" rx="18" fill="url(#dots)"/>
+            <circle cx="836" cy="120" r="9" fill="#ff3b3b"/><circle cx="836" cy="120" r="18" fill="#ff3b3b" opacity=".18"/>
+            <text x="836" y="598" text-anchor="middle" font-family="Inter Tight,sans-serif" font-weight="800" font-size="24" letter-spacing="5" fill="#3b424c">VM</text>
+            <circle cx="420" cy="352" r="236" fill="#0a0c0f" stroke="url(#metal)" stroke-width="6"/>
+            <circle cx="420" cy="352" r="212" fill="#16191e"/>
+            <circle cx="420" cy="352" r="140" fill="url(#glassF)"/>
+            <text x="60" y="612" font-family="Inter Tight,sans-serif" font-weight="700" font-size="16" letter-spacing="4" fill="#5b6470">CINE · 6K · RAW</text>
+          </svg>
+        </div>
+        <div class="lens l1"></div><div class="lens l2"></div><div class="lens l3"></div>
+
+        <div class="face f-back">
+          <svg viewBox="0 0 960 640" aria-hidden="true">
+            <defs>
+              <linearGradient id="bodyB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3038"/><stop offset=".45" stop-color="#16191e"/><stop offset="1" stop-color="#0a0b0e"/></linearGradient>
+              <linearGradient id="rimB" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#5aaaff" stop-opacity=".4"/><stop offset=".12" stop-color="#5aaaff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="metalB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1f5"/><stop offset=".45" stop-color="#8c95a1"/><stop offset=".55" stop-color="#f3f5f8"/><stop offset="1" stop-color="#5f6874"/></linearGradient>
+              <radialGradient id="recB" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ff8a8a"/><stop offset=".5" stop-color="#e01e1e"/><stop offset="1" stop-color="#7a0b0b"/></radialGradient>
+            </defs>
+            <rect x="260" y="8" width="400" height="30" rx="15" fill="url(#bodyB)"/>
+            <rect x="290" y="30" width="34" height="40" fill="#121418"/><rect x="596" y="30" width="34" height="40" fill="#121418"/>
+            <rect x="734" y="34" width="130" height="36" rx="9" fill="#1b1f25"/>
+            <rect x="0" y="64" width="960" height="576" rx="36" fill="url(#bodyB)"/>
+            <rect x="0" y="64" width="960" height="576" rx="36" fill="url(#rimB)"/>
+            <rect x="1.5" y="65.5" width="957" height="573" rx="35" fill="none" stroke="rgba(140,190,255,.3)" stroke-width="3"/>
+            <rect x="24" y="90" width="792" height="516" rx="16" fill="#050607" stroke="#2c3138" stroke-width="2"/>
+            <circle cx="46" cy="80" r="6" fill="#ff3b3b" class="tally"/>
+            <g fill="#07080a"><rect x="848" y="112" width="76" height="7" rx="3.5"/><rect x="848" y="128" width="76" height="7" rx="3.5"/><rect x="848" y="144" width="76" height="7" rx="3.5"/><rect x="848" y="160" width="76" height="7" rx="3.5"/><rect x="848" y="176" width="76" height="7" rx="3.5"/><rect x="848" y="192" width="76" height="7" rx="3.5"/><rect x="848" y="208" width="76" height="7" rx="3.5"/></g>
+            <text x="886" y="300" text-anchor="middle" font-family="Inter Tight,sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="#8b939e">REC</text>
+            <circle cx="886" cy="346" r="34" fill="#0c0e11" stroke="url(#metalB)" stroke-width="4"/>
+            <circle cx="886" cy="346" r="24" fill="url(#recB)"/>
+            <circle cx="886" cy="462" r="48" fill="url(#metalB)"/>
+            <circle cx="886" cy="462" r="44" fill="none" stroke="#5f6874" stroke-width="6" stroke-dasharray="2 5"/>
+            <circle cx="886" cy="462" r="18" fill="#1b1f25"/>
+            <g fill="#2a2f37"><rect x="848" y="540" width="34" height="22" rx="5"/><rect x="890" y="540" width="34" height="22" rx="5"/><rect x="848" y="570" width="34" height="22" rx="5"/><rect x="890" y="570" width="34" height="22" rx="5"/></g>
+            <g font-family="Inter Tight,sans-serif" font-weight="700" font-size="8" fill="#9aa3ad" text-anchor="middle" letter-spacing="1"><text x="865" y="554">ISO</text><text x="907" y="554">WB</text><text x="865" y="584">FPS</text><text x="907" y="584">MENU</text></g>
+            <text x="40" y="626" font-family="Inter Tight,sans-serif" font-weight="700" font-size="13" letter-spacing="4" fill="#4d5560">VM CINE · 6K · 24P · MONITOR A</text>
+          </svg>
+          <div class="screen">
+            <div class="standby">STBY</div>
+            <div class="feed">
+              <div class="shots"></div>
+              <div class="vf" aria-hidden="true">
+                <i class="br b1"></i><i class="br b2"></i><i class="br b3"></i><i class="br b4"></i>
+                <i class="safe"></i><i class="x"></i>
+                <span class="rec"><i></i>REC</span>
+                <span class="bat">▮▮▮▯ 4K · 24P</span>
+                <span class="tc">00:00:00:00</span>
+                <span class="meta">ISO 800 · T2.8 · 1/48</span>
+                <span class="sc">SCENE 01 · TAKE 01</span>
+              </div>
+            </div>
+            <div class="flash"></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="badge pre">
+      <svg viewBox="0 0 582 1030" aria-hidden="true">
+        <defs>
+          <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9dee4"/><stop offset=".25" stop-color="#ffffff"/><stop offset=".8" stop-color="#f1f4f7"/><stop offset="1" stop-color="#c3cad3"/></linearGradient>
+          <linearGradient id="clip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f6f9"/><stop offset=".45" stop-color="#8d96a2"/><stop offset=".6" stop-color="#eef1f4"/><stop offset="1" stop-color="#606a76"/></linearGradient>
+        </defs>
+        <rect x="264" y="-700" width="48" height="1118" fill="url(#strap)"/>
+        <line x1="268" y1="-700" x2="268" y2="414" stroke="#c4cbd3" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <line x1="308" y1="-700" x2="308" y2="414" stroke="#c4cbd3" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <text transform="translate(282,-680) rotate(90)" font-family="Inter Tight,sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#0d0f12" opacity=".78">VINAY MAHADEV · ACTOR · VINAY MAHADEV · ACTOR · VINAY MAHADEV · ACTOR · VINAY MAHADEV · ACTOR · VINAY MAHADEV · ACTOR ·</text>
+        <rect x="258" y="404" width="60" height="28" rx="5" fill="url(#clip)"/>
+        <circle cx="288" cy="448" r="13" fill="none" stroke="url(#clip)" stroke-width="6"/>
+        <ellipse cx="288" cy="482" rx="13" ry="22" fill="none" stroke="url(#clip)" stroke-width="7"/>
+        <rect x="150" y="500" width="282" height="450" rx="16" fill="rgba(210,228,255,.16)"/>
+      </svg>
+      <div class="card">
+        <h4>ACTOR<br>CARD</h4>
+        <span class="yr">2026</span>
+        <div class="role">ACTOR // TELUGU · HINDI · ENGLISH</div>
+        <div class="ph"></div>
+        <div class="row"><span>NAME</span><b>VINAY MAHADEV</b></div>
+        <div class="row"><span>BASE</span><b>HYDERABAD</b></div>
+        <div class="row"><span>HEIGHT</span><b>6′2″ · 188 CM</b></div>
+        <div class="row"><span>PLAYING AGE</span><b>20 – 35</b></div>
+        <div class="row"><span>IG</span><b>@VINAYMAHADEV_ACTOR</b></div>
+      </div>
+      <div class="sleeve"></div>
+      <div class="hit"></div>
+    </div>
+
+    <div class="script pre" aria-hidden="true">vinay</div>
+  </div>
+</main>
+
+<div class="lb top" aria-hidden="true"></div><div class="lb bot" aria-hidden="true"></div>
+
+<nav class="ui" aria-label="Site">
+  <svg class="mwm m-only pre" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="mwmg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset=".5" stop-color="#eef4fb" stop-opacity=".9"/><stop offset="1" stop-color="#a9c8ee" stop-opacity=".3"/>
+    </linearGradient></defs>
+    <text x="10" y="210" textLength="1420" lengthAdjust="spacingAndGlyphs" fill="url(#mwmg)">MAHADEV</text>
+  </svg>
+  <div class="mscript m-only pre" aria-hidden="true">vinay</div>
+  <div class="m-badge m-only" aria-hidden="true"></div>
+
+  <button class="tag t1 pre" type="button" data-act="hero">the actor</button>
+  <button class="tag t2 pre" type="button" data-act="work">the work</button>
+  <a class="tag t3 pre" href="#films" data-act="films">filmography</a>
+  <a class="tag t4 pre" href="#cast" data-act="cast">cast vinay</a>
+
+  <button class="logo" type="button" data-act="hero">VINAY MAHADEV</button>
+
+  <div class="hint pre" aria-hidden="true"><i class="line"><b></b></i>scroll into the reel</div>
+
+  <div class="ticket" aria-live="polite">
+    <i class="hole h1"></i><i class="hole h2"></i><i class="hole h3"></i><i class="hole h4"></i>
+    <h2>SHOWREEL</h2>
+    <div class="rows"><div></div><div></div><div></div></div>
+  </div>
+  <div class="desc">
+    <div class="k"></div>
+    <p></p>
+    <a class="cta" href="#" target="_blank" rel="noopener" hidden>watch with sound ↗</a>
+    <div class="num">01 / 05</div>
+  </div>
+
+  <button class="nav-case prev dim" type="button" aria-label="Previous case">
+    <span class="c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+    <span>previous <br>case</span>
+  </button>
+  <button class="nav-case next" type="button" aria-label="Next case">
+    <span class="c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <span>next <br>case</span>
+  </button>
+</nav>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Filmography -->
+<div class="sheet-wrap" id="films" hidden role="dialog" aria-modal="true" aria-labelledby="films-h">
+  <article class="sheet">
+    <i class="hole h1"></i><i class="hole h2"></i>
+    <button class="close" type="button">close ✕</button>
+    <p class="eyebrow">// call sheet</p>
+    <h2 id="films-h">FILMOGRAPHY</h2>
+    <div class="strip" aria-hidden="true">
+      <img src="assets/img/saripodhaa-martin-poster.jpg" alt="" loading="lazy"><img src="assets/img/police-uniform.jpg" alt="" loading="lazy">
+      <img src="assets/img/army-naveen.jpg" alt="" loading="lazy"><img src="assets/img/rugged-bike.jpg" alt="" loading="lazy">
+      <img src="assets/img/village-checks.jpg" alt="" loading="lazy"><img src="assets/img/red-scarf-intense.jpg" alt="" loading="lazy">
+      <img src="assets/img/night-monochrome.jpg" alt="" loading="lazy"><img src="assets/img/maroon-shirt-closeup.jpg" alt="" loading="lazy">
+      <img src="assets/img/intense-closeup.jpg" alt="" loading="lazy"><img src="assets/img/nandi-award-stage.jpg" alt="" loading="lazy">
+    </div>
+    <div class="cols">
+      <section>
+        <h3>Feature films</h3>
+        <ol class="credits">
+          <li><span class="y">2025</span><b>Champion</b><em>as Bhikshapati</em></li>
+          <li><span class="y">2025</span><b>Mowgli</b><em>as Kasi</em></li>
+          <li><span class="y">2025</span><b>Hebbuli Cut (Kannada)</b><em>as Gowda</em></li>
+          <li><span class="y">2024</span><b>Saripodhaa Sanivaaram</b><em>as Martin</em></li>
+          <li><span class="y">2024</span><b>Ambajipeta Marriage Band</b><em>as Prasad</em></li>
+          <li><span class="y">2024</span><b>Premakath</b><em>as Yadav</em></li>
+          <li><span class="y">2023</span><b>Krishna Gadu Ante Oka Range</b><em>as Deva</em></li>
+          <li><span class="y">2022</span><b>Sitaraman</b><em>as Naveen</em></li>
+          <li><span class="y">2021</span><b>Wilddog</b><em>as Qateel</em></li>
+          <li><span class="y">2021</span><b>Valasa</b><em>as Shankar</em></li>
+          <li><span class="y">2019</span><b>Romantic Criminals</b><em>as Mahesh</em></li>
+          <li><span class="y">2019</span><b>Dear Comrade</b><em>as Vinay</em></li>
+        </ol>
+      </section>
+      <section>
+        <h3>In production</h3>
+        <ul class="chips"><li>Irumudi</li><li>Ranabali</li><li>Mysaa</li><li>Rowdy Janardhan</li><li>Fauzi</li></ul>
+        <h3>Theatre</h3>
+        <ul class="plain"><li>NSD Theatre Workshop</li><li>Several plays with <b>Bahurupa Nata Samaikya</b></li></ul>
+        <h3>Awards</h3>
+        <ul class="plain">
+          <li><b>Nandi Award</b> — Best Supporting Actor, 2017 (theatre play)</li>
+          <li><b>Paruchuri Nataka Parishat</b> — Best Actor, 2018</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</div>
+
+<!-- Cast / contacts -->
+<div class="sheet-wrap" id="cast" hidden role="dialog" aria-modal="true" aria-labelledby="cast-h">
+  <article class="sheet">
+    <i class="hole h1"></i><i class="hole h2"></i>
+    <button class="close" type="button">close ✕</button>
+    <div class="cast">
+      <div class="photo" role="img" aria-label="Vinay Mahadev smiling, curly hair, printed shirt" style="background-image:url(assets/img/curls-smile.jpg)"></div>
+      <div>
+        <p class="eyebrow">// cast vinay</p>
+        <h2 id="cast-h">VINAY MAHADEV</h2>
+        <dl class="stats">
+          <div><dt>Profession</dt><dd>Actor</dd></div>
+          <div><dt>Location</dt><dd>Hyderabad</dd></div>
+          <div><dt>Playing age</dt><dd>20 – 35</dd></div>
+          <div><dt>Height</dt><dd>6′2″ (188 cm)</dd></div>
+          <div><dt>Eye colour</dt><dd>Dark brown-black</dd></div>
+          <div><dt>Hair colour</dt><dd>Dark jet-black</dd></div>
+          <div><dt>Languages</dt><dd>English, Telugu &amp; Hindi</dd></div>
+        </dl>
+        <div class="links">
+          <a href="tel:+919849330362">call +91 98493 30362</a>
+          <a href="mailto:vinaymahadev.11@gmail.com">vinaymahadev.11@gmail.com</a>
+          <a class="alt" href="https://www.instagram.com/vinaymahadev_actor/" target="_blank" rel="noopener">instagram @vinaymahadev_actor ↗</a>
+          <a class="alt sr" href="#" target="_blank" rel="noopener">showreel ↗</a>
+        </div>
+        <p class="foot">For auditions, look tests and dates, call or email directly.</p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+(() => {
+'use strict';
+const root = document.documentElement;
+root.classList.add('js');
+
+const SHOWREEL = 'https://youtu.be/88gQMrwR80o?feature=shared';
+const IMG = 'assets/img/';
+const CASES = [
+  { t:'SHOWREEL', rows:['VINAY MAHADEV','ACTING REEL','WATCH ON YOUTUBE ↗'], k:'// showreel',
+    d:'— faces, voices and temperaments, cut into one reel. Tap the ticket to watch it with sound.', link:SHOWREEL,
+    shots:['rugged-bike','intense-closeup','red-scarf-intense','night-monochrome','maroon-shirt-closeup','roar'] },
+  { t:'SARIPODHAA SANIVAARAM', rows:['ROLE — MARTIN','TELUGU FEATURE','2024'], k:'// saripodhaa sanivaaram',
+    d:'— Martin, from the world of Narayana Prabha, in Vivek Athreya’s action drama starring Nani.',
+    shots:['saripodhaa-martin-poster'] },
+  { t:'SITARAMAN', rows:['ROLE — NAVEEN','TELUGU FEATURE','2022'], k:'// sitaraman',
+    d:'— Naveen, in army olive and a beret, up at the snow line.',
+    shots:['army-naveen'] },
+  { t:'THE RANGE', rows:['6′2″ · 188 CM','PLAYING AGE 20–35','ENGLISH · TELUGU · HINDI'], k:'// range',
+    d:'— uniform, village, street, studio: one face that keeps changing its mind.',
+    shots:['police-uniform','village-checks','maroon-shirt-full','curls-smile','gym-physique','tropical-shirt'] },
+  { t:'NANDI AWARD', rows:['BEST SUPPORTING ACTOR','THEATRE PLAY','2017'], k:'// the stage',
+    d:'— trained at the NSD Theatre Workshop, raised on plays with Bahurupa Nata Samaikya. Best Actor, Paruchuri Nataka Parishat 2018.',
+    shots:['nandi-award-stage','white-shirt-studio'] }
+];
+const N = CASES.length;
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const D = ms => RM ? 0 : ms;
+const EASE = 'cubic-bezier(.2,.8,.2,1)', EIN = 'cubic-bezier(.5,0,.75,0)';
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const isM = () => innerWidth <= 820;
+
+const body = document.body, stage = $('.stage'), frame = $('.frame'), plate = $('.plate'), cut = $('.cut');
+const wm = $('.wm'), script = $('.script'), badge = $('.badge'), cam = $('.cam'), bob = $('.cam-bob'), box = $('.box');
+const feed = $('.feed'), shots = $('.shots'), flash = $('.flash'), tcEl = $('.vf .tc'), scEl = $('.vf .sc');
+const mwm = $('.mwm'), mscript = $('.mscript'), mbadgeBox = $('.m-badge');
+const ticket = $('.ticket'), tTitle = ticket.querySelector('h2'), tRows = [...ticket.querySelectorAll('.rows div')];
+const desc = $('.desc'), dK = desc.querySelector('.k'), dP = desc.querySelector('p'), dCta = desc.querySelector('.cta'), dNum = desc.querySelector('.num');
+const prevBtn = $('.prev'), nextBtn = $('.next');
+const lbT = $('.lb.top'), lbB = $('.lb.bot');
+$$('.sheet .sr').forEach(a => a.href = SHOWREEL);
+
+// mobile badge = clone of the frame badge
+const mbadge = badge.cloneNode(true);
+mbadge.querySelector('.hit').remove();
+mbadgeBox.appendChild(mbadge);
+
+let mode = 'hero', busy = false, idx = 0, sheetOpen = null;
+let G = { s:1, x:0, y:0 };
+
+/* ---------- geometry ---------- */
+function setN(){ isM() ? root.style.removeProperty('--n') : root.style.setProperty('--n', Math.min(innerWidth/1440, innerHeight/900) + 'px'); }
+
+function pose(m){
+  const W = innerWidth, H = innerHeight; let s, x, y;
+  if (!isM()){
+    const cover = Math.max(W/1440, H/810), u = Math.min(W/1440, H/900);
+    if (m === 'hero'){ s = cover; x = (W - 1440*s)/2; y = 0; }
+    else {
+      const top = 66*u, bot = 44*u, avail = H - top - bot;
+      s = Math.min(avail/640, (W - 470*u)/960);
+      x = W/2 - 720*s; y = top + (avail - 640*s)/2 - 90*s;
+    }
+  } else {
+    if (m === 'hero'){ s = Math.min(W/620, .7*H/680); x = W/2 - 720*s; y = H - 810*s; }
+    else {
+      const th = ticket.offsetHeight, dh = desc.offsetHeight;
+      root.style.setProperty('--th', th + 'px');
+      const uiB = 62 + th + 18 + Math.max(60, dh) + 14, btn = 92;
+      s = Math.min((W - 28)/960, Math.max(.2, (H - uiB - btn)/640));
+      x = W/2 - 720*s; y = H - btn - 730*s;
+    }
+  }
+  return { s, x, y };
+}
+
+const CAM_ID = 'translate(0px,0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
+function heroCamVals(){
+  const { s, x, y } = G, W = innerWidth, H = innerHeight;
+  const vl = Math.max(0, -x/s), vr = Math.min(1440, (W - x)/s), vb = Math.min(810, (H - y)/s);
+  let sc, cx, cy;
+  if (!isM()){ sc = .34; cx = vl + 18/s + 60 + 480*sc; cy = Math.min(620, vb - 40/s - 320*sc); }
+  else {
+    // phones: float the camera in the empty band between the handwriting and his hair
+    sc = .3;
+    const scriptBottom = 12 + 96*W/430 + .29*W, headTop = y + 150*s;
+    const ty = Math.max(scriptBottom + 320*sc*s*.9, (scriptBottom + headTop)/2);
+    cx = (.3*W - x)/s; cy = (ty - y)/s;
+  }
+  return { tx: cx - 720, ty: cy - 410, sc };
+}
+const heroCamStr = v => `translate(${v.tx}px,${v.ty}px) scale(${v.sc}) rotateX(-10deg) rotateY(154deg) rotateZ(-6deg)`;
+const midCamStr = v => `translate(${v.tx*.4}px,${v.ty*.4 - 40}px) scale(${v.sc + (1 - v.sc)*.5}) rotateX(-4deg) rotateY(70deg) rotateZ(-2deg)`;
+
+function fitHero(){
+  if (isM()) return;
+  const { s, x, y } = G, W = innerWidth, H = innerHeight;
+  const vl = Math.max(0, -x/s), vr = Math.min(1440, (W - x)/s), pad = 18/s;
+  wm.style.left = (vl + .6*pad) + 'px';
+  wm.style.width = (vr - vl - 1.2*pad) + 'px';
+  badge.style.left = Math.min(986, vr - pad - 417) + 'px';
+  const vb = Math.min(810, (H - y)/s);
+  badge.style.top = Math.min(-165, vb - 56/s - 935) + 'px';
+  script.style.left = (vl + pad + 70) + 'px';
+}
+
+function place(m){
+  const p = pose(m); G = p;
+  frame.style.transform = `translate(${p.x}px,${p.y}px) scale(${p.s})`;
+  frame.classList.toggle('m-case', m === 'case');
+  stage.classList.toggle('m-case', m === 'case');
+  if (m === 'hero'){ fitHero(); cam.style.transform = heroCamStr(heroCamVals()); }
+  else cam.style.transform = CAM_ID;
+  if (isM()) root.style.setProperty('--mbs', (mbadgeBox.offsetWidth / 582) || .2);
+}
+
+/* ---------- small animation helpers ---------- */
+function play(el, kf, o){ // runs, then drops back to the element's CSS state
+  const a = el.animate(kf, Object.assign({ easing:EASE, fill:'both' }, o));
+  a.finished.then(() => a.cancel()).catch(() => {});
+  return a;
+}
+let bobAnim = null;
+function startBob(){
+  if (RM || bobAnim) return;
+  bobAnim = bob.animate([
+    { transform:'translateY(0) rotate(0deg)', easing:'ease-in-out' },
+    { transform:'translateY(-34px) rotate(-1.6deg)', easing:'ease-in-out' },
+    { transform:'translateY(0) rotate(0deg)', easing:'ease-in-out' },
+    { transform:'translateY(28px) rotate(1.4deg)', easing:'ease-in-out' },
+    { transform:'translateY(0) rotate(0deg)' }], { duration:6400, iterations:Infinity });
+}
+function stopBob(){ if (bobAnim){ bobAnim.cancel(); bobAnim = null; } }
+function startSway(el){
+  if (RM) return;
+  stopSway(el);
+  el._sway = el.animate([{ transform:'rotate(-1.1deg)' }, { transform:'rotate(1.1deg)' }],
+    { duration:3200, iterations:Infinity, direction:'alternate', easing:'ease-in-out' });
+}
+function stopSway(el){ if (el._sway){ el._sway.cancel(); el._sway = null; } }
+
+/* ---------- entrance ---------- */
+function entrance(){
+  if (root.dataset.in) return; root.dataset.in = '1';
+  cam.classList.add('in');
+  const tags = $$('.tag');
+  if (RM){ $$('.pre').forEach(e => e.classList.remove('pre')); afterEntrance(); return; }
+  const go = (el, kf, o) => { el.classList.remove('pre'); return play(el, kf, o); };
+  tags.forEach((t, i) => go(t, [{ opacity:0, transform:'translateY(-40px) rotate(-4deg)' }, { opacity:1, transform:'none' }],
+    { duration:700, delay:120 + i*80, easing:'cubic-bezier(.3,1.5,.5,1)' }));
+  [wm, mwm].forEach(w => go(w, [{ opacity:0, transform:'translateY(60px)', clipPath:'inset(100% 0 0 0)' },
+    { opacity:1, transform:'none', clipPath:'inset(0 0 0 0)' }], { duration:1100, delay:260 }));
+  [script, mscript].forEach(s => go(s, [{ opacity:0, clipPath:'inset(0 100% 0 0)' }, { opacity:1, clipPath:'inset(0 0% 0 0)' }],
+    { duration:900, delay:1050, easing:'cubic-bezier(.5,0,.3,1)' }));
+  [badge, mbadge].forEach(b => go(b, [
+    { opacity:0, transform:'translateY(-120%) rotate(8deg)' },
+    { opacity:1, transform:'translateY(0) rotate(-3deg)', offset:.6 },
+    { transform:'rotate(1.6deg)', offset:.8 },
+    { opacity:1, transform:'rotate(0deg)' }], { duration:1500, delay:700 }) && setTimeout(() => { if (mode === 'hero' && !busy) startSway(b); }, 700 + 1500 + 20));
+  go($('.hint'), [{ opacity:0 }, { opacity:.85 }], { duration:600, delay:1800 });
+  play(bob, [{ transform:'translate(-560px,900px) rotate(-26deg)' }, { transform:'translate(0,0) rotate(0deg)' }],
+    { duration:1400, delay:900, easing:'cubic-bezier(.2,.9,.25,1)' });
+  setTimeout(() => { startBob(); afterEntrance(); }, 900 + 1400 + 40);
+}
+function afterEntrance(){
+  const h = location.hash.slice(1);
+  if (h === 'films' || h === 'cast') openSheet(h);
+  else if (h === 'work' || /^case-\d$/.test(h)) toCase(h.startsWith('case-') ? Math.min(N, Math.max(1, +h.slice(5))) - 1 : 0);
+}
+
+/* hover swing on the badge (adds on top of the sway) */
+badge.querySelector('.hit').addEventListener('pointerenter', () => {
+  if (mode !== 'hero' || RM || busy) return;
+  badge.animate([{ transform:'rotate(0deg)' }, { transform:'rotate(-6deg)' }, { transform:'rotate(4deg)' }, { transform:'rotate(-2deg)' }, { transform:'rotate(0deg)' }],
+    { duration:1400, easing:'ease-out', composite:'add' });
+});
+cam.addEventListener('pointerenter', () => {
+  if (mode !== 'hero' || RM || busy) return;
+  box.animate([{ transform:'translateZ(-120px) rotateY(0deg)' }, { transform:'translateZ(-120px) rotateY(-16deg)' }, { transform:'translateZ(-120px) rotateY(0deg)' }],
+    { duration:1000, easing:'ease-in-out' });
+});
+
+/* ---------- hero out / in ---------- */
+let outs = [];
+function heroOut(){
+  const o = { duration:D(380), easing:EIN, fill:'forwards' };
+  outs.forEach(a => a.cancel()); outs = [];
+  [wm, mwm].forEach(w => outs.push(w.animate([{ transform:'none', opacity:1 }, { transform:'translateY(-40px)', opacity:0 }], o)));
+  [script, mscript].forEach(s => outs.push(s.animate([{ opacity:1 }, { opacity:0 }], o)));
+  [badge, mbadge].forEach(b => { stopSway(b); outs.push(b.animate([{ transform:'none', opacity:1 }, { transform:'translateY(-110%) rotate(-6deg)', opacity:0 }], o)); });
+}
+function heroIn(){
+  outs.forEach(a => a.cancel()); outs = [];
+  const o = { duration:D(700) };
+  [wm, mwm].forEach(w => play(w, [{ opacity:0, transform:'translateY(40px)' }, { opacity:1, transform:'none' }], o));
+  [script, mscript].forEach(s => play(s, [{ opacity:0, clipPath:'inset(0 100% 0 0)' }, { opacity:1, clipPath:'inset(0 0% 0 0)' }],
+    { duration:D(700), delay:D(250), easing:'cubic-bezier(.5,0,.3,1)' }));
+  [badge, mbadge].forEach(b => play(b, [
+    { opacity:0, transform:'translateY(-110%) rotate(6deg)' },
+    { opacity:1, transform:'translateY(0) rotate(-2deg)', offset:.7 },
+    { opacity:1, transform:'rotate(0deg)' }], { duration:D(1100) }) && setTimeout(() => { if (mode === 'hero') startSway(b); }, D(1100) + 20));
+}
+
+/* ---------- reel inside the camera monitor ---------- */
+const preloaded = new Set();
+function preload(i){ CASES[i].shots.forEach(n => { if (preloaded.has(n)) return; preloaded.add(n); const im = new Image(); im.src = IMG + n + '.jpg'; }); }
+let reelT = null, reelI = 0, curShot = null, take = 1;
+function showShot(i, name, instant){
+  const d = document.createElement('div'); d.className = 'shot';
+  const src = IMG + name + '.jpg';
+  d.innerHTML = `<img class="bg" src="${src}" alt=""><img class="fg" src="${src}" alt="Vinay Mahadev — ${CASES[i].t.toLowerCase()}">`;
+  shots.appendChild(d);
+  const prev = curShot; curShot = d;
+  scEl.textContent = `SCENE ${String(i + 1).padStart(2, '0')} · TAKE ${String(take).padStart(2, '0')}`;
+  if (!RM) d.querySelector('.fg').animate([{ transform:'scale(1)' }, { transform:'scale(1.07)' }], { duration:5200, easing:'linear', fill:'forwards' });
+  if (instant || RM){ $$('.shot').forEach(s => s !== d && s.remove()); return; }
+  d.animate([{ opacity:0 }, { opacity:1 }], { duration:700, easing:'ease-out' }).finished.then(() => prev && prev.remove()).catch(() => {});
+}
+function startReel(i){
+  stopReel(); reelI = 0; take = 1;
+  showShot(i, CASES[i].shots[0], true);
+  const sh = CASES[i].shots;
+  if (sh.length < 2) return;
+  const tick = () => { reelT = setTimeout(() => { reelI = (reelI + 1) % sh.length; take++; showShot(i, sh[reelI]); tick(); }, 3400); };
+  tick();
+}
+function stopReel(){ clearTimeout(reelT); reelT = null; }
+
+let tcRaf = 0, tcStart = 0, lastF = -1;
+const p2 = v => String(v).padStart(2, '0');
+function startTC(){
+  cancelAnimationFrame(tcRaf); tcStart = performance.now(); lastF = -1;
+  const loop = t => {
+    const f = Math.max(0, Math.floor((t - tcStart) / 1000 * 24));
+    if (f !== lastF){ lastF = f; const s = Math.floor(f/24); tcEl.textContent = `00:${p2(Math.floor(s/60) % 60)}:${p2(s % 60)}:${p2(f % 24)}`; }
+    tcRaf = requestAnimationFrame(loop);
+  };
+  tcRaf = requestAnimationFrame(loop);
+}
+function stopTC(){ cancelAnimationFrame(tcRaf); }
+
+/* ---------- case UI ---------- */
+function fitTitle(){
+  tTitle.style.fontSize = '';
+  const avail = tTitle.clientWidth, sw = tTitle.scrollWidth;
+  if (avail && sw > avail) tTitle.style.fontSize = (parseFloat(getComputedStyle(tTitle).fontSize) * avail / sw * .98) + 'px';
+}
+function fillCase(i){
+  const c = CASES[i];
+  tTitle.textContent = c.t; fitTitle();
+  c.rows.forEach((r, k) => tRows[k].textContent = r);
+  dK.textContent = c.k; dP.textContent = c.d;
+  dNum.textContent = `${p2(i + 1)} / ${p2(N)}`;
+  ticket.classList.toggle('link', !!c.link);
+  ticket.title = c.link ? 'Watch the showreel on YouTube' : '';
+  dCta.hidden = !c.link; if (c.link) dCta.href = c.link;
+  prevBtn.classList.toggle('dim', i === 0);
+  prevBtn.setAttribute('aria-label', i === 0 ? 'Back to the actor' : 'Previous case');
+}
+let caseOuts = [];
+function caseOut(){
+  caseOuts.forEach(a => a.cancel()); caseOuts = [];
+  caseOuts.push(ticket.animate([{ opacity:1, transform:'none' }, { opacity:0, transform:'translateY(-40px) rotate(4deg)' }],
+    { duration:D(380), easing:EIN, fill:'forwards' }));
+  [...desc.children].forEach((el, k) => caseOuts.push(el.animate([{ opacity:1, transform:'none' }, { opacity:0, transform:'translateY(-10px)' }],
+    { duration:D(300), delay:D(k*40), easing:EIN, fill:'forwards' })));
+}
+function caseIn(i, first){
+  caseOuts.forEach(a => a.cancel()); caseOuts = [];
+  play(ticket, [{ opacity:0, transform:'translateY(-60px) rotate(-6deg)' }, { opacity:1, transform:'translateY(6px) rotate(1.2deg)', offset:.7 }, { opacity:1, transform:'none' }],
+    { duration:D(800), delay:D(first ? 150 : 0) });
+  [...desc.children].forEach((el, k) => play(el, [{ opacity:0, transform:'translateY(14px)' }, { opacity:1, transform:'none' }],
+    { duration:D(600), delay:D((first ? 250 : 80) + k*70) }));
+}
+
+/* ---------- hero -> camera dive ---------- */
+let personOut = [];
+async function toCase(start = 0){
+  if (busy || mode !== 'hero') return;
+  busy = true; body.classList.add('busy');
+  closeSheet(true);
+  idx = start; fillCase(idx); preload(idx);
+  heroOut();
+  await wait(D(330));
+  const from = heroCamVals();
+  stopBob();
+  if (!RM){
+    lbT.animate([{ height:0 }, { height:'9vh', offset:.3 }, { height:'9vh', offset:.75 }, { height:0 }], { duration:1600, easing:'cubic-bezier(.65,0,.35,1)' });
+    lbB.animate([{ height:0 }, { height:'9vh', offset:.3 }, { height:'9vh', offset:.75 }, { height:0 }], { duration:1600, easing:'cubic-bezier(.65,0,.35,1)' });
+    frame.style.setProperty('--glide', '1.5s'); frame.classList.add('glide');
+  }
+  place('case');
+  personOut.forEach(a => a.cancel());
+  personOut = [plate, cut].map(el => el.animate(
+    [{ transform:'scale(1)', filter:'blur(0px)', opacity:1 }, { transform:'scale(1.22)', filter:'blur(16px)', opacity:0 }],
+    { duration:D(1000), easing:'cubic-bezier(.45,0,.3,1)', fill:'forwards' }));
+  cam.animate([{ transform:heroCamStr(from) }, { transform:midCamStr(from), offset:.5 }, { transform:CAM_ID }],
+    { duration:D(1500), easing:'cubic-bezier(.65,0,.3,1)' });
+  await wait(D(1500));
+  arriveCase(true);
+}
+function arriveCase(first){
+  mode = 'case'; body.classList.add('is-case');
+  cam.setAttribute('aria-label', 'Next case');
+  if (!RM){
+    feed.animate([
+      { clipPath:'inset(50% 50% 50% 50%)', filter:'brightness(4)' },
+      { clipPath:'inset(49.6% 0% 49.6% 0%)', filter:'brightness(4)', offset:.35 },
+      { clipPath:'inset(0% 0% 0% 0%)', filter:'brightness(1)' }], { duration:560, easing:EASE });
+    flash.animate([{ opacity:0 }, { opacity:.55 }, { opacity:0 }], { duration:600, easing:'ease-out' });
+  }
+  startReel(idx); startTC();
+  caseIn(idx, first);
+  preload((idx + 1) % N);
+  setTimeout(() => { busy = false; body.classList.remove('busy'); frame.classList.remove('glide'); }, D(700));
+}
+
+/* ---------- switching cases ---------- */
+async function swapTo(n){
+  if (busy || mode !== 'case') return;
+  busy = true; body.classList.add('busy');
+  caseOut();
+  const fo = feed.animate([{ opacity:1 }, { opacity:0 }], { duration:D(350), fill:'forwards' });
+  await wait(D(360));
+  stopReel(); idx = n; fillCase(n); startReel(n);
+  fo.cancel();
+  if (!RM){
+    flash.animate([{ opacity:0 }, { opacity:.35 }, { opacity:0 }], { duration:420, easing:'ease-out' });
+    feed.animate([{ opacity:0, transform:'scale(1.04)' }, { opacity:1, transform:'none' }], { duration:500, easing:EASE });
+  }
+  caseIn(n, false);
+  preload((n + 1) % N);
+  setTimeout(() => { busy = false; body.classList.remove('busy'); }, D(520));
+}
+
+/* ---------- back to the hero ---------- */
+async function toHero(){
+  if (busy || mode !== 'case') return;
+  busy = true; body.classList.add('busy');
+  closeSheet(true);
+  caseOut(); stopReel(); stopTC();
+  body.classList.remove('is-case'); mode = 'hero';
+  cam.setAttribute('aria-label', 'Open the reel');
+  if (!RM){ frame.style.setProperty('--glide', '.9s'); frame.classList.add('glide'); }
+  place('hero');
+  const to = heroCamVals();
+  cam.animate([{ transform:CAM_ID }, { transform:midCamStr(to), offset:.5 }, { transform:heroCamStr(to) }],
+    { duration:D(1100), easing:'cubic-bezier(.65,0,.35,1)' });
+  personOut.forEach(a => a.cancel()); personOut = [];
+  [plate, cut].forEach(el => play(el, [{ transform:'scale(1.22)', filter:'blur(16px)', opacity:0 }, { transform:'scale(1)', filter:'blur(0px)', opacity:1 }],
+    { duration:D(900), delay:D(150) }));
+  await wait(D(250));
+  heroIn();
+  setTimeout(() => { busy = false; body.classList.remove('busy'); frame.classList.remove('glide'); startBob(); }, D(1100));
+}
+
+/* ---------- input ---------- */
+function down(){ if (busy || sheetOpen) return; mode === 'hero' ? toCase(0) : swapTo((idx + 1) % N); }
+function up(){ if (busy || sheetOpen || mode !== 'case') return; idx === 0 ? toHero() : swapTo(idx - 1); }
+
+let wheelLock = 0;
+addEventListener('wheel', e => {
+  if (sheetOpen) return;
+  e.preventDefault();
+  if (Math.abs(e.deltaY) < 18) return;
+  const now = Date.now(); if (now < wheelLock) return; wheelLock = now + 900;
+  e.deltaY > 0 ? down() : up();
+}, { passive:false });
+
+let ts = null;
+addEventListener('touchstart', e => { if (sheetOpen) return; const t = e.touches[0]; ts = { x:t.clientX, y:t.clientY }; }, { passive:true });
+addEventListener('touchmove', e => { if (!sheetOpen) e.preventDefault(); }, { passive:false });
+addEventListener('touchend', e => {
+  if (!ts || sheetOpen) return;
+  const t = e.changedTouches[0], dx = t.clientX - ts.x, dy = t.clientY - ts.y; ts = null;
+  const ax = Math.abs(dx), ay = Math.abs(dy);
+  if (Math.max(ax, ay) < 40) return;
+  if (mode === 'hero'){ if (dy < 0 && ay > ax) toCase(0); return; }
+  if (ay > ax) (dy < 0 ? down() : up()); else (dx < 0 ? down() : up());
+});
+
+addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ if (sheetOpen) return closeSheet(); if (mode === 'case') return toHero(); }
+  if (sheetOpen || e.metaKey || e.ctrlKey || e.altKey) return;
+  const onCtl = e.target.closest && e.target.closest('button,a');
+  if (onCtl && (e.key === ' ' || e.key === 'Enter')) return;
+  if (['ArrowDown','PageDown',' '].includes(e.key) || (e.key === 'ArrowRight' && mode === 'case')){ e.preventDefault(); down(); }
+  else if (['ArrowUp','PageUp','ArrowLeft'].includes(e.key)){ e.preventDefault(); up(); }
+});
+
+/* clicks */
+$$('[data-act]').forEach(el => el.addEventListener('click', e => {
+  e.preventDefault();
+  const act = el.dataset.act;
+  if (act === 'hero'){ if (sheetOpen) closeSheet(); if (mode === 'case') toHero(); }
+  else if (act === 'work'){ if (sheetOpen) closeSheet(); if (mode === 'hero') toCase(0); }
+  else openSheet(act);
+}));
+prevBtn.addEventListener('click', up);
+nextBtn.addEventListener('click', down);
+cam.addEventListener('click', () => { if (busy) return; mode === 'hero' ? toCase(0) : down(); });
+ticket.addEventListener('click', () => { const c = CASES[idx]; if (mode === 'case' && c.link) window.open(c.link, '_blank', 'noopener'); });
+
+/* ---------- sheets ---------- */
+let lastFocus = null;
+function openSheet(id){
+  if (busy) return;
+  const w = document.getElementById(id); if (!w) return;
+  if (sheetOpen === w) return;
+  if (sheetOpen) closeSheet(true);
+  lastFocus = document.activeElement;
+  sheetOpen = w; w.hidden = false;
+  const card = w.querySelector('.sheet'); card.scrollTop = 0;
+  if (!RM){
+    w.animate([{ opacity:0 }, { opacity:1 }], { duration:300, easing:'ease-out' });
+    card.animate([{ opacity:0, transform:'translateY(-80px) rotate(-3deg)' }, { opacity:1, transform:'translateY(8px) rotate(.6deg)', offset:.7 }, { opacity:1, transform:'none' }],
+      { duration:800, easing:EASE });
+  }
+  history.replaceState(null, '', '#' + id);
+  w.querySelector('.close').focus({ preventScroll:true });
+}
+function closeSheet(instant){
+  if (!sheetOpen) return;
+  const w = sheetOpen; sheetOpen = null;
+  history.replaceState(null, '', location.pathname + location.search);
+  const done = () => { w.hidden = true; };
+  if (instant || RM) done();
+  else { const a = w.animate([{ opacity:1 }, { opacity:0 }], { duration:250, fill:'forwards' }); a.finished.then(() => { done(); a.cancel(); }).catch(done); }
+  if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll:true });
+}
+$$('.sheet-wrap').forEach(w => {
+  w.addEventListener('click', e => { if (e.target === w || e.target.closest('.close')) closeSheet(); });
+});
+
+/* ---------- boot ---------- */
+setN(); place('hero');
+addEventListener('resize', () => { setN(); frame.classList.remove('glide'); place(mode); if (mode === 'case') fitTitle(); });
+fillCase(0);
+const imgReady = el => new Promise(r => { if (el.complete) r(); else { el.addEventListener('load', r, { once:true }); el.addEventListener('error', r, { once:true }); } });
+Promise.race([Promise.all([document.fonts.ready, imgReady(plate), imgReady(cut)]), wait(2500)])
+  .then(() => requestAnimationFrame(() => { place(mode); entrance(); }));
+setTimeout(entrance, 4000);
+document.fonts && document.fonts.ready.then(() => { fitTitle(); if (mode === 'hero') place('hero'); });
+preload(0);
+})();
+</script>
+</body>
+</html>
