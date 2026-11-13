@@ -16,14 +16,14 @@
 <link rel="preload" as="image" href="assets/img/hero-cut-hd.webp">
 <style>
 /* User Palette: #1B365D (Dark Navy), #005A9C (Ocean Blue), #60C1E5 (Cyan), #A0E0EF (Ice Blue) */
-:root, [data-theme="dark"]{
+:root{
   --c-navy: #1B365D;
   --c-blue: #005A9C;
   --c-cyan: #60C1E5;
   --c-ice:  #A0E0EF;
 
   --bg-page: #091322;
-  --nav-pill-bg: rgba(27, 54, 93, 0.72);
+  --nav-pill-bg: rgba(27, 54, 93, 0.76);
   --text-primary: #F0F8FF;
   --text-secondary: rgba(240, 248, 255, 0.76);
   --border-subtle: rgba(96, 193, 229, 0.22);
@@ -38,30 +38,6 @@
   --pv-bg: rgba(9, 19, 34, 0.96);
   --pv-card: #152740;
   color-scheme: dark;
-}
-
-[data-theme="light"]{
-  --c-navy: #1B365D;
-  --c-blue: #005A9C;
-  --c-cyan: #60C1E5;
-  --c-ice:  #A0E0EF;
-
-  --bg-page: #EEF6FB;
-  --nav-pill-bg: rgba(255, 255, 255, 0.88);
-  --text-primary: #1B365D;
-  --text-secondary: rgba(27, 54, 93, 0.76);
-  --border-subtle: rgba(0, 90, 156, 0.18);
-  --hh-from: 0 90 156;    /* #005A9C */
-  --hh-to: 27 54 93;      /* #1B365D */
-  --nav-link: #1B365D;
-  --fstrip-bg: #13243C;
-  --sprocket-color: rgba(255, 255, 255, 0.6);
-  --sheet-bg: #FFFFFF;
-  --sheet-text: #1B365D;
-  --modal-backdrop: rgba(11, 22, 38, 0.65);
-  --pv-bg: rgba(238, 246, 251, 0.96);
-  --pv-card: #FFFFFF;
-  color-scheme: light;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -126,27 +102,6 @@ a{color:inherit;text-decoration:none}
 }
 .lbl-short{display:none}
 
-/* Circular Theme Toggle Button */
-.gk-theme-toggle{
-  display:grid;
-  place-items:center;
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  border:1.5px solid var(--border-subtle);
-  color:var(--text-primary);
-  background:rgba(255,255,255,0.06);
-  transition:all 0.2s ease;
-  flex-shrink:0;
-  margin-left:4px;
-}
-.gk-theme-toggle:hover{
-  border-color:var(--c-cyan);
-  color:var(--c-cyan);
-  transform:scale(1.1);
-}
-.gk-theme-toggle svg{width:18px;height:18px}
-
 /* ---------- Hero Section (Static Stage) ---------- */
 .hero-stage{
   position:relative;
@@ -207,9 +162,10 @@ a{color:inherit;text-decoration:none}
 /* High-Quality Hero Portrait Cutout — 100% Static, Crisp and Centered */
 .hero-portrait-box{
   position:absolute;
-  left:50%;
+  left:0;
+  right:0;
   bottom:0;
-  transform:translateX(-50%);
+  margin:0 auto;
   z-index:10;
   width:min(860px, 94vw);
   max-height:86vh;
@@ -224,11 +180,12 @@ a{color:inherit;text-decoration:none}
   max-height:86vh;
   object-fit:contain;
   object-position:bottom center;
+  margin:0 auto;
+  display:block;
   filter:drop-shadow(0 24px 50px rgba(0,0,0,0.38));
   -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 82%, transparent 98%);
   mask-image:linear-gradient(180deg, #000 0%, #000 82%, transparent 98%);
   user-select:none;
-  display:block;
   image-rendering:-webkit-optimize-contrast;
   pointer-events:none;
 }
@@ -257,8 +214,31 @@ a{color:inherit;text-decoration:none}
 
 .hero-actions{
   display:flex;
-  align-items:center;
-  gap:12px;
+  flex-direction:column;
+  align-items:stretch;
+  gap:10px;
+  width:clamp(260px, 24vw, 340px);
+}
+.btn-about-hero{
+  width:100%;
+  padding:14px 28px;
+  font-size:13.5px;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-align:center;
+}
+.hero-sub-actions{
+  display:flex;
+  gap:10px;
+  width:100%;
+}
+.btn-sub-hero{
+  flex:1 1 0;
+  min-width:0;
+  padding:12px 14px;
+  font-size:11.5px;
+  text-align:center;
+  white-space:nowrap;
 }
 
 /* Capsule Pill Button with User's Color Palette */
@@ -791,8 +771,8 @@ a{color:inherit;text-decoration:none}
   to{opacity:1;transform:translateY(0)}
 }
 @keyframes portraitUp{
-  from{opacity:0;transform:translateX(-50%) translateY(55px)}
-  to{opacity:1;transform:translateX(-50%) translateY(0)}
+  from{opacity:0;transform:translateY(45px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
 /* ---------- Responsive ---------- */
@@ -831,37 +811,53 @@ a{color:inherit;text-decoration:none}
     align-items:center;
     justify-content:flex-start;
     overflow:visible;
+    text-align:center;
   }
   .hero-ambient-glow{
     width:min(360px, 90vw);
     height:min(360px, 90vw);
-    top:40%;
+    top:38%;
+    left:50%;
+    transform:translate(-50%, -50%);
     filter:blur(36px);
   }
   .heading-wrap{
     margin-top:4px;
-    margin-bottom:-42px;
+    margin-bottom:-38px;
     z-index:2;
     position:relative;
+    width:100%;
+    display:flex;
+    justify-content:center;
   }
   .hero-heading{
     font-size:clamp(32px, 11vw, 68px);
     letter-spacing:-0.02em;
     line-height:0.92;
+    text-align:center;
   }
   .hero-portrait-box{
     position:relative;
-    left:auto;
+    left:0;
+    right:0;
     bottom:auto;
-    transform:none;
-    width:min(420px, 94vw);
-    max-height:58vh;
     margin:0 auto;
+    width:min(380px, 92vw);
+    max-height:54vh;
     z-index:10;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    transform:none !important;
   }
   .hero-portrait-img{
-    max-height:56vh;
+    width:100%;
+    height:auto;
+    max-height:52vh;
+    object-fit:contain;
     object-position:top center;
+    margin:0 auto;
+    display:block;
     -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 80%, transparent 98%);
     mask-image:linear-gradient(180deg, #000 0%, #000 80%, transparent 98%);
   }
@@ -874,6 +870,9 @@ a{color:inherit;text-decoration:none}
     padding-top:0;
     z-index:25;
     width:100%;
+    max-width:380px;
+    margin-left:auto;
+    margin-right:auto;
   }
   .hero-bio-line{
     max-width:340px;
@@ -893,9 +892,35 @@ a{color:inherit;text-decoration:none}
   }
   .hero-actions{
     display:flex;
-    gap:10px;
-    justify-content:center;
+    flex-direction:column;
     width:100%;
+    max-width:340px;
+    gap:10px;
+    margin:0 auto;
+    align-items:stretch;
+  }
+  .btn-about-hero{
+    width:100%;
+    padding:15px 24px;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(96, 193, 229, 0.4), inset 0 2px 8px rgba(255,255,255,0.4);
+  }
+  .hero-sub-actions{
+    display:flex;
+    width:100%;
+    gap:10px;
+  }
+  .btn-sub-hero{
+    flex:1 1 0;
+    min-width:0;
+    padding:12px 8px;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-align:center;
+    white-space:nowrap;
   }
   .gk-pill-btn{
     padding:11px 24px;
@@ -962,22 +987,6 @@ a{color:inherit;text-decoration:none}
     <button class="nav-link" type="button" data-act="gallery">Gallery</button>
     <a class="nav-link" href="#films" data-act="films"><span class="lbl-full">Filmography</span><span class="lbl-short">Films</span></a>
     <a class="nav-link" href="#cast" data-act="cast">Contact</a>
-    <button class="gk-theme-toggle" id="theme-btn" type="button" aria-label="Toggle theme">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-    </button>
   </nav>
 </header>
 
@@ -1207,36 +1216,6 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]));
 const RM = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-/* ---------- Theme Switcher ---------- */
-const themeBtn = $('#theme-btn');
-const iconMoon = themeBtn?.querySelector('.icon-moon');
-const iconSun = themeBtn?.querySelector('.icon-sun');
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  try { localStorage.setItem('theme', theme); } catch (e) {}
-  if (iconMoon && iconSun) {
-    if (theme === 'dark') {
-      iconMoon.style.display = 'none';
-      iconSun.style.display = 'block';
-    } else {
-      iconMoon.style.display = 'block';
-      iconSun.style.display = 'none';
-    }
-  }
-}
-
-let savedTheme = 'dark';
-try { savedTheme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); } catch (e) {}
-applyTheme(savedTheme);
-
-if (themeBtn) {
-  themeBtn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  });
-}
 
 /* ---------- 12 Ordered Photos for Gallery & Film Reel ---------- */
 const IMG = 'assets/img/';
